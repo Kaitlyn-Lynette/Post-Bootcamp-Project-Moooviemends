@@ -1,61 +1,44 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
-import { Grid, Typography, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import Header from '../components/Header'
+import Container from '../components/Container'
+import {Grid, Typography } from '@material-ui/core';
+import logo from '../assets/logo.png';
+import Search from '../components/Search';
 
 
-const useStyles = makeStyles ((theme) => ({
-    // root: {
-    //     flexGrow: 1,
-    // },
-    title: {
-        fontFamily: 'Luckiest Guy',
-        color: 'white',
-        position: 'absolute',
-        width: '295px',
-        height: '29px',
-        left: '40px',
-        top: '100px',
-        
-    }
-}));
+export default function Landing () {
 
-
-const Landing = () => {
-    const classes = useStyles();
     return (
-        <Grid 
-        container style={container}
-        flexWrap='wrap'
-        justify='center'// Adding justify center moved the title center
-        alignItems='center'
-        direction='column'
-        >
-        <Grid item>
-            <Typography variant='h1' className={classes.title}>Moooviemends</Typography>
-        </Grid>
-        
-        </Grid>
-        
+        <Container>
+            <Grid item xs={11} lg={10}>
+                <img style={logoStyle} src={logo} alt='logo' />
+            </Grid>
+            <Grid item xs={11} lg={10}>
+                <Header></Header>
+            </Grid>
+            <Grid item xs={11} lg={10}>
+                <Search>
+                <Typography style={title}>Search</Typography>
+                </Search>
+            </Grid>
+        </Container>
     )
 }
 
-const container = {
-  display: 'flex',
-  backgroundColor: '#FF5200',
-  color: 'white',
-  width: '100vw',
-  height: '100vh',
-  flexGrow: '1',
-};
+const logoStyle = {
+    height: '334px',
+    width: '367px',
+    position: 'relative',
+    top: 0,
+    left: 0
+}
 
-// const headerStyle = {
-//     position: 'absolute',
-//     width: '295px',
-//     height: '29px',
-//     left: '40px',
-//     top: '100px',
-    
-// }
+const title = {
+    fontFamily: 'Luckiest Guy',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '24px',
+    lineHeight: '24px',
+    textAlign: 'center'
+}
 
-export default Landing;
