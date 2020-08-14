@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
         top: '363px',
         background: '#EEEEEE',
         opacity: '0.26',
-        // position: 'relative'
       },
       title: {
         fontFamily: 'Luckiest Guy',
@@ -27,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: '24px',
         textAlign: 'center',
         color: '#000000',
-        // position: 'absolute'
       }
     },
   }));

@@ -21,6 +21,9 @@ export default function Landing () {
                 <Typography style={title}>Search</Typography>
                 </Search>
             </Grid>
+            <Grid item xs={11} lg={10}>
+                <Typography style={slogan}>Make your movie mends to your friends</Typography>
+            </Grid>
         </Container>
     )
 }
@@ -42,3 +45,18 @@ const title = {
     textAlign: 'center'
 }
 
+const slogan = {
+    position: 'absolute',
+    width: '297px',
+    height: '61px',
+    left: '39px',
+    top: '438px',
+    fontFamily: 'Crafty Girls',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '36px',
+    lineHeight: '52px',
+    textAlign: 'center',
+    color: '#000000'
+
+}
