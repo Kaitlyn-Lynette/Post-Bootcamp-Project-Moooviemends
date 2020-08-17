@@ -3,8 +3,6 @@ import Header from '../components/Header'
 import Container from '../components/Container'
 import {Grid, Typography } from '@material-ui/core';
 import logo from '../assets/logo.png';
-import Search from '../components/Search';
-
 
 export default function Landing () {
 
@@ -15,11 +13,6 @@ export default function Landing () {
             </Grid>
             <Grid item xs={11} lg={10}>
                 <Header></Header>
-            </Grid>
-            <Grid item xs={11} lg={10}>
-                <Search>
-                <Typography style={title}>Search</Typography>
-                </Search>
             </Grid>
             <Grid item xs={11} lg={10}>
                 <Typography style={slogan}>Make your movie mends to your friends</Typography>
@@ -42,7 +35,8 @@ const title = {
     fontWeight: 'normal',
     fontSize: '24px',
     lineHeight: '24px',
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#000000'
 }
 
 const slogan = {
@@ -50,7 +44,7 @@ const slogan = {
     width: '297px',
     height: '61px',
     left: '39px',
-    top: '438px',
+    top: '402px',
     fontFamily: 'Crafty Girls',
     fontStyle: 'normal',
     fontWeight: 'normal',
