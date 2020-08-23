@@ -6,6 +6,13 @@ import { Input } from '@material-ui/core';
 const SearchBar = (props) => {
     return (
         <Input
+        onChange={props.handleInputChange}
+        value={props.value}
+        name="search"
+        type="text"
+        className="form-control"
+        place="Search for a Movie"
+        id="search"
         style={paperStyle}
         {...props}
         />
