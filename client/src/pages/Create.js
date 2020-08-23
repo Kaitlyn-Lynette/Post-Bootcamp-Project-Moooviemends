@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Container from '../components/Container'
 import {Grid, Typography, Paper, Button} from '@material-ui/core';
 import logo from '../assets/logo.png';
+import SearchBar from '../components/SearchBar';
 
 export default function Create () {
 
@@ -13,8 +14,9 @@ export default function Create () {
         </Grid>
         <Grid item xs={11} lg={10}>
             <Typography style={actionStyle}>Mooovie Playlist</Typography>
-            <Paper style={paperStyle}>
-            </Paper>
+            {/* <Paper style={paperStyle}>
+            </Paper> */}
+            <SearchBar></SearchBar>
         </Grid>
         <Grid item xs={11} lg={10}>
             <Typography style={descStyle}>Description</Typography>
@@ -42,7 +44,6 @@ const logoStyle = {
 const actionStyle = {
     fontFamily: 'Luckiest Guy',
     fontStyle: 'normal',
-    fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '24px',
     lineHeight: '24px',
@@ -68,17 +69,17 @@ const descStyle = {
     top: '273px'
 }
 
-const paperStyle = {
-    position: 'absolute',
-    width: '312px',
-    height: '37px',
-    left: '23px',
-    top: '206px',
-    background: '#EEEEEE',
-    border: '1px solid #000000',
-    boxSizing: 'borderBox',
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-}
+// const paperStyle = {
+//     position: 'absolute',
+//     width: '312px',
+//     height: '37px',
+//     left: '23px',
+//     top: '206px',
+//     background: '#EEEEEE',
+//     border: '1px solid #000000',
+//     boxSizing: 'borderBox',
+//     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+// }
 
 const descBoxStyle = {
     position: 'absolute',

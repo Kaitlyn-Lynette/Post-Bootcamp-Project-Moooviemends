@@ -1,6 +1,6 @@
-import React from 'react'
-import Header from '../components/Header'
-import Container from '../components/Container'
+import React from 'react';
+import Header from '../components/Header';
+import Container from '../components/Container';
 import {Grid, Typography } from '@material-ui/core';
 import logo from '../assets/logo.png';
 
@@ -29,15 +29,6 @@ const logoStyle = {
     left: 0
 }
 
-const title = {
-    fontFamily: 'Luckiest Guy',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: '24px',
-    lineHeight: '24px',
-    textAlign: 'center',
-    color: '#000000'
-}
 
 const slogan = {
     position: 'absolute',
