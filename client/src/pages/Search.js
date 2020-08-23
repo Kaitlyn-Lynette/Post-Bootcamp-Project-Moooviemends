@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Container from '../components/Container';
+import SearchBar from '../components/SearchBar';
 import {Grid, Typography, Paper, Button} from '@material-ui/core';
 import logo from '../assets/logo.png';
 
@@ -16,8 +17,7 @@ export default function Search () {
             </Grid>
             <Grid item xs={11} lg={10}>
                 <Typography style={actionStyle}>Search YO' MOOOVIE</Typography>
-                <Paper style={paperStyle}>
-                </Paper>
+                <SearchBar></SearchBar>
             </Grid>
         </Container>
     )
