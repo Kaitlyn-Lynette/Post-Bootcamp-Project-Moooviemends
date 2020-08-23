@@ -1,10 +1,11 @@
 import React from 'react'
-import {Paper} from '@material-ui/core';
+// import {Paper} from '@material-ui/core';
+import { Input } from '@material-ui/core';
 
 
 const SearchBar = (props) => {
     return (
-        <Paper 
+        <Input
         style={paperStyle}
         {...props}
         />
