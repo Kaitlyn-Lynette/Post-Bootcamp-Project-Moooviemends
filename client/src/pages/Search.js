@@ -51,7 +51,7 @@ export default function Search () {
                     <Typography style={actionStyle}>Search YO' MOOOVIE</Typography>
                     <SearchBar></SearchBar>
                     {/* <Buttons onClick={handleInputChange}></Buttons> */}
-                    <Buttons></Buttons>
+                    <Buttons>Search</Buttons>
                 </Grid>
                 <Grid item xs={11} lg={10}>
                     <MovieCard>

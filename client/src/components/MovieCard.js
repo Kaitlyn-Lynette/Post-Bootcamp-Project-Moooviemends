@@ -18,7 +18,6 @@ function MovieCard (props) {
 }
 
 const cardStyle = {
-    maxWidth: '345',
     position: 'absolute',
     width: '130px',
     height: '266px',
