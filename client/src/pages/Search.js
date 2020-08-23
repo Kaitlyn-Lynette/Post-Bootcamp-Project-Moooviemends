@@ -9,36 +9,36 @@ import logo from '../assets/logo.png';
 
 export default function Search () {
 
-    // state = {
-    //     result: {},
-    //     search: ""
-    // };
+    state = {
+        result: {},
+        search: ""
+    };
 
-    // componentDidMount() {
-    //     this.searchMovies("The Matrix")
-    //   }
+    componentDidMount() {
+        this.searchMovies("The Matrix")
+      }
     
-    // searchMovies = query => {
-    // API.search(query)
-    //     .then(res => this.setState({ result: res.data }))
-    //     .catch(err => console.log(err));
-    // };
+    searchMovies = query => {
+    API.search(query)
+        .then(res => this.setState({ result: res.data }))
+        .catch(err => console.log(err));
+    };
 
-    // // When the form is submitted, search the OMDB API for the value of `this.state.search`
-    // handleInputChange = event => {
-    //     const value = event.target.value;
-    //     const name = event.target.name;
-    //     this.setState({
-    //       [name]: value
-    //     });
-    //   };
+    // When the form is submitted, search the OMDB API for the value of `this.state.search`
+    handleInputChange = event => {
+        const value = event.target.value;
+        const name = event.target.name;
+        this.setState({
+          [name]: value
+        });
+      };
 
-    // handleFormSubmit = event => {
-    // event.preventDefault();
-    // this.searchMovies(this.state.search);
-    // };
+    handleFormSubmit = event => {
+    event.preventDefault();
+    this.searchMovies(this.state.search);
+    };
 
-    // render () {
+    render () {
         return (
             <Container>
                 <Grid item xs={11} lg={10}>
@@ -50,18 +50,30 @@ export default function Search () {
                 <Grid item xs={11} lg={10}>
                     <Typography style={actionStyle}>Search YO' MOOOVIE</Typography>
                     <SearchBar></SearchBar>
-                    {/* <Buttons onClick={handleInputChange}></Buttons> */}
-                    <Buttons>Search</Buttons>
+                        <Buttons onClick={handleInputChange}>Search</Buttons>
+                    {/* <Buttons>Search</Buttons> */}
                 </Grid>
                 <Grid item xs={11} lg={10}>
-                    <MovieCard>
+                    <MovieCard
+                    heading={this.state.result.Title || "Search for a movie to begin"}
+                    >
+                    {this.state.result.Title ? (
+                    <MovieDetail
+                    title={this.state.result.Title}
+                    src={this.state.result.Poster}
+                    director={this.state.result.Director}
+                    genre={this.state.result.Genre}
+                    released={this.state.result.Released}
+                    />
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
                     </MovieCard>
                 </Grid>
             </Container>
         )
     }   
-
-// }
+}
 
 const logoStyle = {
     height: '334px',
