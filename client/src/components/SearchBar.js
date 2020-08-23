@@ -5,7 +5,7 @@ import {Paper} from '@material-ui/core';
 const SearchBar = (props) => {
     return (
         <Paper 
-        paper style={paperStyle}
+        style={paperStyle}
         {...props}
         />
     )
