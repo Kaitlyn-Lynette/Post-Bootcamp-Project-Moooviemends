@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from '../components/Header';
 import Container from '../components/Container';
 import SearchBar from '../components/SearchBar';
 import MovieCard from '../components/MovieCard';
-import Buttons from '../components/Buttons';
+import MovieDetail from '../components/MovieDetail';
+import API from "../utils/API";
 import {Grid, Typography} from '@material-ui/core';
 import logo from '../assets/logo.png';
 
-export default function Search () {
-
+class Search extends Component {
     state = {
         result: {},
         search: ""
     };
 
     componentDidMount() {
-        this.searchMovies("The Matrix")
-      }
+        this.searchMovies("The Matrix");
+    }
     
     searchMovies = query => {
     API.search(query)
@@ -49,9 +49,12 @@ export default function Search () {
                 </Grid>
                 <Grid item xs={11} lg={10}>
                     <Typography style={actionStyle}>Search YO' MOOOVIE</Typography>
-                    <SearchBar></SearchBar>
-                        <Buttons onClick={handleInputChange}>Search</Buttons>
-                    {/* <Buttons>Search</Buttons> */}
+                    <SearchBar
+                    value={this.state.search}
+                    handleInputChange={this.handleInputChange}
+                    handleFormSubmit={this.handleFormSubmit}
+                    >
+                    </SearchBar>
                 </Grid>
                 <Grid item xs={11} lg={10}>
                     <MovieCard
@@ -96,3 +99,6 @@ const actionStyle = {
     left: '12px',
     top: '174px'
 }
+
+
+export default Search;
