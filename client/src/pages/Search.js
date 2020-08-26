@@ -65,7 +65,7 @@ class Search extends Component {
                         {this.state.result.Title || "Search for a movie to begin"}
                     </MovieTitle>
                     <MovieCard
-                    image={this.state.result.Poster}
+                    src={this.state.result.Poster}
                     director={this.state.result.Director}
                     genre={this.state.result.Genre}
                     released={this.state.result.Released}

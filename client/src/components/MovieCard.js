@@ -21,15 +21,15 @@ function MovieCard (props) {
 
 const cardStyle = {
     position: 'absolute',
-    left: '43px',
+    left: '23px',
     top: '363.46px',
     margin: '0px auto'
 }
 
 const mediaStyle = {
     paddingTop: '150%',
-    width: "170",
-    height: "250"
+    // width: "170",
+    // height: "250"
 }
 
 
