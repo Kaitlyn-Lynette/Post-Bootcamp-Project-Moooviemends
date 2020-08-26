@@ -1,10 +1,9 @@
 import React from 'react'
-import { InputBase, Button, Paper,Grid} from '@material-ui/core';
+import { InputBase, Button,Grid} from '@material-ui/core';
 
 
 const SearchBar = (props) => {
     return (
-        // <Paper component="form" style={paperStyle}>
         <Grid>
             <InputBase
             onChange={props.handleInputChange}
@@ -17,17 +16,10 @@ const SearchBar = (props) => {
             />
             <br />
             <Button style={btnStyle} onClick={props.handleFormSubmit} {...props}> Search </Button>
-        {/* </Paper> */}
         </Grid>
     )
 }
 
-const paperStyle = {
-    padding: '2px 4px',
-    display: 'flex',
-    alignItems: 'center',
-    width: 400,
-}
 
 const inputStyle = {
     position: 'absolute',
@@ -41,13 +33,14 @@ const inputStyle = {
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     marginLeft: 'theme.spacing(1)',
     flex: 1,
+    justifyContent: 'center',
 };
 
 const btnStyle = {
     position: 'absolute',
     width: '118px',
     height: '32px',
-    left: '29px',
+    left: '23px',
     top: '266px',
     background: '#BA0FF7',
     borderRadius: '18px',

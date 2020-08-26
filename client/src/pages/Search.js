@@ -4,6 +4,8 @@ import Container from '../components/Container';
 import SearchBar from '../components/SearchBar';
 import MovieCard from '../components/MovieCard';
 import MovieTitle from '../components/MovieTitle';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
 import API from "../utils/API";
 import {Grid, Typography} from '@material-ui/core';
 import logo from '../assets/logo.png';
@@ -45,10 +47,10 @@ class Search extends Component {
                 <Grid item xs={12} lg={10}>
                     <img style={logoStyle} src={logo} alt='logo' />
                 </Grid>
-                <Grid item xs={12} lg={10}>
+                <Grid item xs={12} lg={10} container>
                     <Header></Header>
                 </Grid>
-                <Grid item xs={12} lg={10}>
+                <Grid item xs={12} lg={10} >
                     <Typography style={actionStyle}>Search YO' MOOOVIE</Typography>
                         <SearchBar
                         value={this.state.search}
@@ -58,17 +60,17 @@ class Search extends Component {
                         </SearchBar>
                 </Grid>
                 {this.state.result.Title ? (
-                        <Grid item xs={12} lg={10}>
-                        <MovieTitle>
+                <Grid item xs={12} lg={10}>
+                    <MovieTitle>
                         {this.state.result.Title || "Search for a movie to begin"}
-                        </MovieTitle>
-                        <MovieCard
-                        src={this.state.result.Poster}
-                        director={this.state.result.Director}
-                        genre={this.state.result.Genre}
-                        released={this.state.result.Released}
-                        />
-                        </Grid>
+                    </MovieTitle>
+                    <MovieCard
+                    image={this.state.result.Poster}
+                    director={this.state.result.Director}
+                    genre={this.state.result.Genre}
+                    released={this.state.result.Released}
+                    />
+                </Grid>
               ) : (
                 <h3>No Results to Display</h3>
               )}
@@ -87,6 +89,8 @@ const logoStyle = {
     left: 0
 }
 
+
+
 const actionStyle = {
     fontFamily: 'Luckiest Guy',
     fontStyle: 'normal',
@@ -94,12 +98,19 @@ const actionStyle = {
     fontSize: '24px',
     lineHeight: '24px',
     color: '#000000',
-    position: 'relative',
+    position: 'absolute',
     justify: 'center',
     width: '274px',
     height: '24px',
-    left: '12px',
+    left: '23px',
     top: '174px'
+}
+
+const mediaStyle = {
+    // paddingTop: '150%',
+    component:"img",
+    width: "170",
+    height: "250"
 }
 
 

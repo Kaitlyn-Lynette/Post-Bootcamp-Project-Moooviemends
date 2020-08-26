@@ -9,6 +9,7 @@ const useStyles = makeStyles (() => ({
         position: 'absolute',
         width: '300px',
         height: '45px',
+        display: 'flex',
         left: '12px',
         top: '331px',
         // fontSize: '1em',
@@ -18,7 +19,7 @@ const useStyles = makeStyles (() => ({
 const MovieTitle = (props) => {
     const classes = useStyles();
     return (
-        <Typography variant='h3' className={classes.title} {...props}></Typography>
+        <Typography variant='h4' className={classes.title} {...props}></Typography>
     )
 }
 

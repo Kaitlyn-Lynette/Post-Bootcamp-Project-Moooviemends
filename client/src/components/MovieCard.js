@@ -1,23 +1,19 @@
 import React from "react";
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 
 function MovieCard (props) {
     return (
     <Card style={cardStyle}>
-        <CardHeader
-        title={props.heading}
-        />
         <CardMedia
-        style= {mediaStyle}
-        image= {props.src}
+            style= {mediaStyle}
+            image= {props.src}
         />
         <CardContent>
-        <h2>{props.director}</h2>
-        <h2>{props.genre}</h2>
-        <h2>{props.released}</h2>
+        <h2>Director: {props.director}</h2>
+        <h2>Genre: {props.genre}</h2>
+        <h2>Released: {props.released}</h2>
         </CardContent>
     </Card>
     )
@@ -25,16 +21,17 @@ function MovieCard (props) {
 
 const cardStyle = {
     position: 'absolute',
-    // width: '130px',
-    // height: '266px',
     left: '43px',
     top: '363.46px',
+    margin: '0px auto'
 }
 
 const mediaStyle = {
-    height: '0',
-    paddingTop: '56.25%', 
+    paddingTop: '150%',
+    width: "170",
+    height: "250"
 }
+
 
 export default MovieCard;
 

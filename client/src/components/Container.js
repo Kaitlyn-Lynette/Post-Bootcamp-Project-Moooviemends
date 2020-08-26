@@ -5,6 +5,7 @@ const Container = (props) => {
     return (
         <Grid 
         container style={container}
+        spacing = {3}
         justify='center'// Adding justify center moved the title center
         alignItems='center'
         direction='column'
@@ -15,10 +16,9 @@ const Container = (props) => {
 
 const container = {
     backgroundColor: '#FF5200',
-    color: 'white',
-    width: '100vw',
-    height: '100vh',
-    flewgrow: '1',
+    width: '200vw',
+    height: '300vh',
+    overflow: 'auto',
   };
 
   export default Container;
