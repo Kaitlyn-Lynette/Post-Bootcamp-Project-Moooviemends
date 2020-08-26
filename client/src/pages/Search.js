@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Container from '../components/Container';
 import SearchBar from '../components/SearchBar';
 import MovieCard from '../components/MovieCard';
-import MovieDetail from '../components/MovieDetail';
+import MovieTitle from '../components/MovieTitle';
 import API from "../utils/API";
 import {Grid, Typography} from '@material-ui/core';
 import logo from '../assets/logo.png';
@@ -37,43 +37,41 @@ class Search extends Component {
     handleFormSubmit = event => {
     event.preventDefault();
     this.searchMovies(this.state.search);
+    console.log('this is the poster',this.state.result.Poster);
     };
-
     render () {
         return (
             <Container>
-                <Grid item xs={11} lg={10}>
+                <Grid item xs={12} lg={10}>
                     <img style={logoStyle} src={logo} alt='logo' />
                 </Grid>
-                <Grid item xs={11} lg={10}>
+                <Grid item xs={12} lg={10}>
                     <Header></Header>
                 </Grid>
-                <Grid item xs={11} lg={10}>
+                <Grid item xs={12} lg={10}>
                     <Typography style={actionStyle}>Search YO' MOOOVIE</Typography>
-                    <SearchBar
-                    value={this.state.search}
-                    handleInputChange={this.handleInputChange}
-                    handleFormSubmit={this.handleFormSubmit}
-                    >
-                    </SearchBar>
+                        <SearchBar
+                        value={this.state.search}
+                        handleInputChange={this.handleInputChange}
+                        handleFormSubmit={this.handleFormSubmit}
+                        >
+                        </SearchBar>
                 </Grid>
-                <Grid item xs={11} lg={10}>
-                    <MovieCard
-                    heading={this.state.result.Title || "Search for a movie to begin"}
-                    >
-                    {this.state.result.Title ? (
-                    <MovieDetail
-                    title={this.state.result.Title}
-                    src={this.state.result.Poster}
-                    director={this.state.result.Director}
-                    genre={this.state.result.Genre}
-                    released={this.state.result.Released}
-                    />
+                {this.state.result.Title ? (
+                        <Grid item xs={12} lg={10}>
+                        <MovieTitle>
+                        {this.state.result.Title || "Search for a movie to begin"}
+                        </MovieTitle>
+                        <MovieCard
+                        src={this.state.result.Poster}
+                        director={this.state.result.Director}
+                        genre={this.state.result.Genre}
+                        released={this.state.result.Released}
+                        />
+                        </Grid>
               ) : (
                 <h3>No Results to Display</h3>
               )}
-                    </MovieCard>
-                </Grid>
             </Container>
         )
     }   

@@ -1,10 +1,11 @@
 import React from 'react'
-import { InputBase, Button, Paper} from '@material-ui/core';
+import { InputBase, Button, Paper,Grid} from '@material-ui/core';
 
 
 const SearchBar = (props) => {
     return (
-        <Paper component="form" style={paperStyle}>
+        // <Paper component="form" style={paperStyle}>
+        <Grid>
             <InputBase
             onChange={props.handleInputChange}
             value={props.value}
@@ -16,7 +17,8 @@ const SearchBar = (props) => {
             />
             <br />
             <Button style={btnStyle} onClick={props.handleFormSubmit} {...props}> Search </Button>
-        </Paper>
+        {/* </Paper> */}
+        </Grid>
     )
 }
 
