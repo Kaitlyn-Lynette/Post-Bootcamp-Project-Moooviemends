@@ -80,7 +80,9 @@ class Search extends Component {
 const logoStyle = {
     height: '334px',
     width: '367px',
-    position: 'relative',
+    position: 'absolute',
+    textAlign: 'center',
+    justify: 'center',
     top: 0,
     left: 0
 }
@@ -92,7 +94,8 @@ const actionStyle = {
     fontSize: '24px',
     lineHeight: '24px',
     color: '#000000',
-    position: 'absolute',
+    position: 'relative',
+    justify: 'center',
     width: '274px',
     height: '24px',
     left: '12px',
