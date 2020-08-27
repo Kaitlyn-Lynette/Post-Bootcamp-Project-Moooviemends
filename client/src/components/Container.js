@@ -17,7 +17,7 @@ const Container = (props) => {
 const container = {
     backgroundColor: '#FF5200',
     width: '200vw',
-    height: '300vh',
+    height: '200vh',
     overflow: 'auto',
   };
 

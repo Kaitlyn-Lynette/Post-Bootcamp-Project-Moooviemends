@@ -9,10 +9,9 @@ const useStyles = makeStyles (() => ({
         position: 'absolute',
         width: '300px',
         height: '45px',
-        display: 'flex',
         left: '12px',
         top: '318px',
-        // fontSize: '1em',
+        textAlign: 'center'
     }
 }));
 

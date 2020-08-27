@@ -10,10 +10,10 @@ function MovieCard (props) {
             style= {mediaStyle}
             image= {props.src}
         />
-        <CardContent>
-        <h2>Director: {props.director}</h2>
-        <h2>Genre: {props.genre}</h2>
-        <h2>Released: {props.released}</h2>
+        <CardContent style={contentStyle}>
+        <h4>Director: {props.director}</h4>
+        <h4>Genre: {props.genre}</h4>
+        <h4>Released: {props.released}</h4>
         </CardContent>
     </Card>
     )
@@ -23,13 +23,19 @@ const cardStyle = {
     position: 'absolute',
     left: '23px',
     top: '363.46px',
-    margin: '0px auto'
+    margin: '0px auto',
+    backgroundColor: "yellow",
+    fontFamily: "Crafty Girls"
 }
 
 const mediaStyle = {
     paddingTop: '150%',
-    // width: "170",
-    // height: "250"
+    height: "250"
+}
+
+const contentStyle = {
+    width: '300px',
+    height: '150px'
 }
 
 

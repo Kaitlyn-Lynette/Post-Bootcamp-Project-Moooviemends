@@ -4,8 +4,6 @@ import Container from '../components/Container';
 import SearchBar from '../components/SearchBar';
 import MovieCard from '../components/MovieCard';
 import MovieTitle from '../components/MovieTitle';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
 import API from "../utils/API";
 import {Grid, Typography} from '@material-ui/core';
 import logo from '../assets/logo.png';
@@ -103,15 +101,9 @@ const actionStyle = {
     width: '274px',
     height: '24px',
     left: '23px',
-    top: '174px'
+    top: '145px'
 }
 
-const mediaStyle = {
-    // paddingTop: '150%',
-    component:"img",
-    width: "170",
-    height: "250"
-}
 
 
 export default Search;
