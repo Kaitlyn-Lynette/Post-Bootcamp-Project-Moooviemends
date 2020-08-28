@@ -3,8 +3,9 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3003;
+const Playlist = require("./models/Playlist");
 const app = express();
-const apiRoutes = require("./routes/apiRoutes");
+const apiRoutes = require("./routes/api");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));

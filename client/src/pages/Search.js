@@ -4,6 +4,7 @@ import Container from '../components/Container';
 import SearchBar from '../components/SearchBar';
 import MovieCard from '../components/MovieCard';
 import MovieTitle from '../components/MovieTitle';
+import Buttons from '../components/Buttons';
 import API from "../utils/API";
 import {Grid, Typography} from '@material-ui/core';
 import logo from '../assets/logo.png';
@@ -72,6 +73,9 @@ class Search extends Component {
               ) : (
                 <h3>No Results to Display</h3>
               )}
+              <Grid item xs={12} lg={10}>
+                  <Buttons style={buttonStyle}>Add to Playlist</Buttons>
+              </Grid>
             </Container>
         )
     }   
@@ -104,6 +108,21 @@ const actionStyle = {
     top: '145px'
 }
 
+
+const buttonStyle = {
+    background: '#BA0FF7',
+    borderRadius: '18px',
+    fontFamily: 'Luckiest Guy',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '24px',
+    lineHeight: '24px',
+    position: 'absolute',
+    width: '276px',
+    height: '44px',
+    left: '50px',
+    top: '1070px'
+}
 
 
 export default Search;
