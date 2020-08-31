@@ -12,30 +12,44 @@ import logo from '../assets/logo.png';
 const Search = () => {
 
     const [search, setSearch] = useState('');
+    const [movie, setMovie] = useState({});
+    // const [title, setTitle] = useState('');
+    // const [director,setDirector] = useState('');
+    // const [genre, setGenre] = useState('');
    
     const searchMovies = query => {
+        console.log(query)
         API.search(query)
             .then((res) => { 
-                setSearch({ search: res.data });
                 console.log(res.data)
+                setMovie({
+                    title: res.data.Title, 
+                    director: res.data.Director,
+                    genre: res.data.Genre,
+                    poster: res.data.Poster
+                 })
+                 console.log(movie)
             })
             .catch((err) => {
                 console.log(err);
             });
-        };
+    };
+
+
 
     // When the form is submitted, search the OMDB API for the value of `this.state.search`
    const handleInputChange = event => {
         const {value} = event.target; 
-        console.log('this is the value',value);
+        setSearch(value)
+        console.log('this is the value', value);
     };
 
 
     const handleFormSubmit = event => {
         event.preventDefault();
         //Calls searchMovies
-        searchMovies();
-        };
+        searchMovies(search);
+    };
 
     // const [title, setTitle] = useState('');
     // const [director,setDirector] = useState('');
@@ -71,16 +85,15 @@ const Search = () => {
                     >
                     </SearchBar>
                 </Grid>
-                {search.title ? (
+                {movie.title ? (
                 <Grid item xs={12} lg={10}>
                     <MovieTitle>
-                        {search.title || "Search for a movie to begin"}
+                        {movie.title || "Search for a movie to begin"}
                     </MovieTitle>
                     <MovieCard
-                    // src={search.Poster}
-                    director={search.director}
-                    genre={search.genre}
-                    released={search.released}
+                    src={movie.poster}
+                    director={movie.director}
+                    genre={movie.genre}
                     />
                 </Grid>
               ) : (

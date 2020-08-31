@@ -9,7 +9,8 @@ const PlaylistSchema = new Schema ({
     //Released
     title: {type: String, required: true},
     director: {type: String, required: true},
-    genre: {type: String, require: true}
+    genre: {type: String, require: true},
+    released: {type: String, require:true}
     // rating: {type: String, required: true},
     // time: {type: Number, required: true}
 });
