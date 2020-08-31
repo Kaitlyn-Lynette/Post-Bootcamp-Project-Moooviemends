@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const Playlist = require('../models/Playlist');
 
+
+//Add a movie to the database
 router.post("/api/playlist", ({body},res)=>{
     Playlist.create(body)
     .then(dbPlaylist => {
