@@ -12,7 +12,7 @@ export default {
     return axios.post('/api/movies');
   },
   //Add a new movie to the playlist
-  createMovie: function (movieData) {
+  saveMovie: function (movieData) {
     return axios.post('/api/movies',movieData);
   },
   //Delete the movie from the playlist

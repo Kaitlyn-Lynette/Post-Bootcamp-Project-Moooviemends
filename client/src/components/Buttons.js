@@ -3,7 +3,7 @@ import {Button} from '@material-ui/core';
 
 export default function Buttons (props) {
     return (
-    <Button style={btnStyle} {...props} />
+    <Button style={btnStyle} onClick={props.handleCreateMovie}{...props} />
     )
 }
 

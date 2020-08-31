@@ -13,10 +13,8 @@ const Search = () => {
 
     const [search, setSearch] = useState('');
     const [movie, setMovie] = useState({});
-    // const [title, setTitle] = useState('');
-    // const [director,setDirector] = useState('');
-    // const [genre, setGenre] = useState('');
-   
+    const [save, setSave] = useState({});
+  
     const searchMovies = query => {
         console.log(query)
         API.search(query)
@@ -28,7 +26,6 @@ const Search = () => {
                     genre: res.data.Genre,
                     poster: res.data.Poster
                  })
-                 console.log(movie)
             })
             .catch((err) => {
                 console.log(err);
@@ -51,22 +48,23 @@ const Search = () => {
         searchMovies(search);
     };
 
-    // const [title, setTitle] = useState('');
-    // const [director,setDirector] = useState('');
-    // const [genre, setGenre] = useState('');
-
-    // const handleCreateMovie = (event) => {
-    //     event.preventDefault();
-    //     API.createMovie({title: title, director: director, genre:genre})
-    //         .then(()=> {
-    //             setTitle('');
-    //             setDirector('');
-    //             setGenre('');
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // }
+    
+    const handleCreateMovie = (event) => {
+        event.preventDefault();
+        setSave({
+            title: movie.title, 
+            director: movie.director,
+            genre: movie.genre,
+        })
+        API.saveMovie(save)
+            .then((res)=> {
+            console.log(res) 
+            console.log("I'm listening")
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
 
         return (
             <Container>
@@ -102,7 +100,7 @@ const Search = () => {
               <Grid item xs={12} lg={10}>
                     <Buttons 
                     style={buttonStyle}
-                    // handleCreateMovie={handleCreateMovie}
+                    handleCreateMovie={handleCreateMovie}
                     >Add to Playlist</Buttons>
               </Grid>
             </Container>
