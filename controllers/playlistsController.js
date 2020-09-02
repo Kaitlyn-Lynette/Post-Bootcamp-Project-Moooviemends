@@ -3,8 +3,6 @@
  module.exports = {
 
     //Post route for saving a new post 
-
-
     create: function (req, res) {
         db.Playlist.create({
             title: req.body.title, 
