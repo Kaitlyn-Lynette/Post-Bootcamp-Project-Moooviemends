@@ -24,7 +24,8 @@ const Search = () => {
                     title: res.data.Title, 
                     director: res.data.Director,
                     genre: res.data.Genre,
-                    poster: res.data.Poster
+                    poster: res.data.Poster,
+                    released: res.data.Released
                  })
             })
             .catch((err) => {
@@ -55,6 +56,7 @@ const Search = () => {
             title: movie.title, 
             director: movie.director,
             genre: movie.genre,
+            released: movie.released
         })
         API.saveMovie(save)
             .then((res)=> {
@@ -92,6 +94,7 @@ const Search = () => {
                     src={movie.poster}
                     director={movie.director}
                     genre={movie.genre}
+                    released={movie.released}
                     />
                 </Grid>
               ) : (

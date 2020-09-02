@@ -10,7 +10,7 @@
             genre: req.body.genre,
             released: req.body.released
         })
-            .then(function(dbMovie){
+            .then(function(dbMovie) {
                 res.json(dbMovie)
             });
     }

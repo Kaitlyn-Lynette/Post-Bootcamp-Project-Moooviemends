@@ -6,6 +6,5 @@ const playlistsController = require('../controllers/playlistsController');
 router 
     .route('/')
     .post(playlistsController.create);
-
-
+    
 module.exports = router;

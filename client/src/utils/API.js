@@ -9,7 +9,7 @@ export default {
   },
   //Get the movies saved to the database for the playlist
   getMovies: function() {
-    return axios.post('/api/movies');
+    return axios.get('/api/movies');
   },
   //Add a new movie to the playlist
   saveMovie: function (movieData) {
