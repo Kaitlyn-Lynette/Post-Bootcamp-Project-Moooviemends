@@ -4,6 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
 function MovieCard (props) {
+
     return (
     <Card style={cardStyle}>
         <CardMedia
@@ -21,11 +22,13 @@ function MovieCard (props) {
 
 const cardStyle = {
     position: 'absolute',
-    left: '23px',
+    left: '30%',
+    right: '30%',
     top: '363.46px',
     margin: '0px auto',
     backgroundColor: "yellow",
-    fontFamily: "Crafty Girls"
+    fontFamily: "Roboto",
+    width: "50%",
 }
 
 const mediaStyle = {
@@ -34,8 +37,9 @@ const mediaStyle = {
 }
 
 const contentStyle = {
-    width: '300px',
-    height: '150px'
+    // width: '50%',
+    height: '100%',
+    // margin: '30px'
 }
 
 

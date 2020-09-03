@@ -7,9 +7,11 @@ const useStyles = makeStyles (() => ({
         fontFamily: 'Luckiest Guy',
         fontSize: '3em',
         display: 'flex',
-        paddingTop: '40px',
+        marginTop: '5px',
         position: 'absolute',
-        left: '20px'
+        // left: '20px'
+        left: '30%',
+        right: '30%',
     }
 }));
 

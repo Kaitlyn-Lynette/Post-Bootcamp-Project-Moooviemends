@@ -9,8 +9,10 @@ const useStyles = makeStyles (() => ({
         position: 'absolute',
         width: '300px',
         height: '45px',
-        left: '12px',
+        // left: '12px',
         top: '318px',
+        left: '30%',
+        right: '30%',
         textAlign: 'center'
     }
 }));

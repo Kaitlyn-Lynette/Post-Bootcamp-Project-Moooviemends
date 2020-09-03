@@ -9,6 +9,8 @@ import API from "../utils/API";
 import {Grid, Typography} from '@material-ui/core';
 import logo from '../assets/logo.png';
 
+
+
 const Search = () => {
 
     const [search, setSearch] = useState('');
@@ -69,7 +71,14 @@ const Search = () => {
     }
 
         return (
-            <Container>
+            // <Container>
+                <Grid 
+                container
+                style={container}
+                justify='center'
+                alignItems='center'
+                direction='column'
+                >
                 <Grid item xs={12} lg={10}>
                     <img style={logoStyle} src={logo} alt='logo' />
                 </Grid>
@@ -106,7 +115,8 @@ const Search = () => {
                     handleCreateMovie={handleCreateMovie}
                     >Add to Playlist</Buttons>
               </Grid>
-            </Container>
+            {/* </Container> */}
+            </Grid>
         );
 };
 
@@ -114,9 +124,10 @@ const Search = () => {
 const logoStyle = {
     height: '334px',
     width: '367px',
+    left: '30%',
+    right: '30%',
     position: 'absolute',
-    top: 0,
-    left: 0
+    textAlign: 'center'
 }
 
 
@@ -131,8 +142,9 @@ const actionStyle = {
     justify: 'center',
     width: '274px',
     height: '24px',
-    left: '23px',
-    top: '145px'
+    top: '145px',
+    left: '30%',
+    right: '30%',
 }
 
 
@@ -147,9 +159,20 @@ const buttonStyle = {
     position: 'absolute',
     width: '276px',
     height: '44px',
-    left: '50px',
-    top: '1070px'
+    // left: '50px',
+    top: '400px',
+    left: '30%',
+    right: '30%',
 }
 
+const container = {
+    backgroundColor: '#FF5200',
+    width: '150vw',
+    height: '100vh',
+    flewgrow: '1',
+    // height: '100%',
+  };
 
+
+ 
 export default Search;

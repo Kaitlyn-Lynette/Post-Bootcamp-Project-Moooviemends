@@ -34,7 +34,7 @@ export default function Create () {
 const logoStyle = {
     height: '334px',
     width: '367px',
-    position: 'relative',
+    position: '',
     justify: 'center',
     top: 0,
     left: 0
