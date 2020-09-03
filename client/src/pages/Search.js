@@ -16,6 +16,8 @@ const Search = () => {
     const [search, setSearch] = useState('');
     const [movie, setMovie] = useState({});
     const [save, setSave] = useState({});
+    const [playlistButton, setPlaylistButton] = React.useState(false)
+    const onClick = () => setPlaylistButton(false)
   
     const searchMovies = query => {
         console.log(query)
@@ -49,6 +51,7 @@ const Search = () => {
         event.preventDefault();
         //Calls searchMovies
         searchMovies(search);
+        setPlaylistButton(!playlistButton)
     };
 
     
@@ -110,10 +113,10 @@ const Search = () => {
                 <h3>No Results to Display</h3>
               )}
               <Grid item xs={12} lg={10}>
-                    <Buttons 
+                   {playlistButton &&  <Buttons 
                     style={buttonStyle}
                     handleCreateMovie={handleCreateMovie}
-                    >Add to Playlist</Buttons>
+                    >Add to Playlist</Buttons>}
               </Grid>
             {/* </Container> */}
             </Grid>
@@ -159,10 +162,9 @@ const buttonStyle = {
     position: 'absolute',
     width: '276px',
     height: '44px',
-    // left: '50px',
-    top: '400px',
     left: '30%',
     right: '30%',
+    bottom: '10px'
 }
 
 const container = {
