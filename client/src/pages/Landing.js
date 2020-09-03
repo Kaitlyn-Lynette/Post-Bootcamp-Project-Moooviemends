@@ -7,7 +7,14 @@ import logo from '../assets/logo.png';
 export default function Landing () {
 
     return (
-        <Container>
+        // <Container>
+        <Grid 
+        container
+        style={container}
+        justify='center'
+        alignItems='center'
+        direction='column'
+        >
             <Grid item xs={11} lg={10}>
                 <img style={logoStyle} src={logo} alt='logo' />
             </Grid>
@@ -17,16 +24,17 @@ export default function Landing () {
             <Grid item xs={11} lg={10}>
                 <Typography style={slogan}>Make your movie mends to your friends</Typography>
             </Grid>
-        </Container>
-    )
+        {/* </Container> */}
+        </Grid>)
 }
 
 const logoStyle = {
     height: '334px',
     width: '367px',
-    position: 'relative',
-    top: 0,
-    left: 0
+    left: '30%',
+    right: '30%',
+    position: 'absolute',
+    textAlign: 'center'
 }
 
 
@@ -34,7 +42,8 @@ const slogan = {
     position: 'absolute',
     width: '297px',
     height: '61px',
-    left: '39px',
+    left: '30%',
+    right: '30%',
     top: '402px',
     fontFamily: 'Crafty Girls',
     fontStyle: 'normal',
@@ -45,3 +54,12 @@ const slogan = {
     color: '#000000'
 
 }
+
+
+const container = {
+    backgroundColor: '#FF5200',
+    width: '150vw',
+    height: '100vh',
+    flewgrow: '1',
+    // height: '100%',
+  };

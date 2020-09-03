@@ -115,12 +115,9 @@ const logoStyle = {
     height: '334px',
     width: '367px',
     position: 'absolute',
-    textAlign: 'center',
-    justify: 'center',
     top: 0,
     left: 0
 }
-
 
 
 const actionStyle = {

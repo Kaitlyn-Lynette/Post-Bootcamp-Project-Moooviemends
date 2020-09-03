@@ -35,6 +35,7 @@ const logoStyle = {
     height: '334px',
     width: '367px',
     position: 'relative',
+    justify: 'center',
     top: 0,
     left: 0
 }
@@ -97,4 +98,10 @@ const btnFontStyle = {
     fontSize: '24px',
     lineHeight: '24px'
 }
+
+// const containerStyle = {
+//       height: '40vh',
+//       display: 'flex',
+//       justifyContent: 'center',
+//   };
 
