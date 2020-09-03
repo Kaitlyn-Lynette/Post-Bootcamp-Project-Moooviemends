@@ -9,25 +9,17 @@
        .catch((err) => res.status(422).json(err));
    },
     create: function (req, res) {
-        db.Playlist.create(body)
+        db.Playlist.create({
+            title: req.body.title, 
+            director: req.body.director, 
+            genre: req.body.genre,
+            released: req.body.released
+        })
             .then(function(dbPlaylist) {
                 res.json(dbPlaylist)
             })
             .catch(err => {
-                res.status(400).json(err);
-              });
-    }
+                res.status(422).json(err)
+            });
 
-    // create: function (req, res) {
-    //     db.Playlist.create({
-    //         title: req.body.title, 
-    //         director: req.body.director, 
-    //         genre: req.body.genre,
-    //         released: req.body.released
-    //     })
-    //         .then(function(dbPlaylist) {
-    //             res.json(dbPlaylist)
-    //         });
-    // }
- };
-
+        }}
