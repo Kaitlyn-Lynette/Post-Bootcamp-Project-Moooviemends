@@ -1,68 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Moooviemends
 
-## Available Scripts
+This is a personal project I started after earning my coding certificate.  This is a React application in which users can query the OMDB API and display information about the movie searched for and then save that movie to a playlist. I created this app using Mongo, Node, Express, Material UI, and React. 
 
-In the project directory, you can run:
+# Table of Contents 
 
-### `npm start`
+###### Learning Objectives
+###### Development Process 
+###### User Story
+###### Summary of Topics Covered
+###### Comprehension Check 
+###### Installation and Usage
+###### Credits, Tools, and References
+###### Questions
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Learning Objectives 
+* Developed my own wire-frames with a mobile-first mentality 
+* Utilize breakpoints and useMediaQuery for a responsive design 
+* Coded a custom ORM in the Model layer of the MVC framework 
+* Coded MaterialUI components to allow for use across pages
+* Utilized React useState hooks to update the 
+* Implement an AJAX call to query an external API 
+* Setup a database in Mongo for storing 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Development Process 
+1. Understand the learning objectives, purpose, concept of the application
+2. Creating the mock-ups on Figma 
+4. Setup the AJAX call to query the OMDB API
+5. Create the database schema
+6. Setup the MVC structure 
+7. Implement MaterialUI for front-end pages
+8. Implementing breakpoints for responsive design 
+9. Review and deploy 
 
-### `npm test`
+# User Story
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. User opens app and decides to save a movie to their playlist or create a playlist
+2. User searches for a movie they would like to add by title which hits the OMDB API
+3. User adds the movie to their playlist or continues searching for a movie
+4. User can view the playlist and the movies stored in each or create a new playlist 
 
-### `npm run build`
+# Summary of Topics Covered: 
+* React hooks
+* Model-View-Controller
+* Object Relational Mapping
+* Breakpoints 
+* AJAX 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Installation and Usage
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[GitHub Repo] (https://github.com/Kaitlyn-Lynette/Moooviemends)
+[Deployed Application]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Credits, Tools, and References
+https://www.youtube.com/watch?v=b6wTbgMCZp4
+https://material-ui.com/customization/breakpoints/
 
-### `npm run eject`
+# Questions
+Questions, suggestions, feedback: Reach me at kaitlyn.l.rodriguez@gmail.com
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
