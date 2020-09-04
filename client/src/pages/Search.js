@@ -8,6 +8,39 @@ import Buttons from '../components/Buttons';
 import API from "../utils/API";
 import {Grid, Typography} from '@material-ui/core';
 import logo from '../assets/logo.png';
+import {useTheme} from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import {makeStyles} from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        backgroundColor: '#FF5200',
+        width: '150vw',
+        height: '100vh',
+        flewgrow: '1',
+        [theme.breakpoints.down("xs")]: {
+            height: '200vh'
+        },        
+    },
+    playlistButton: {
+        background: '#BA0FF7',
+        borderRadius: '18px',
+        fontFamily: 'Luckiest Guy',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '24px',
+        lineHeight: '24px',
+        position: 'absolute',
+        width: '300px',
+        height: '44px',
+        left: '30%',
+        right: '30%',
+        [theme.breakpoints.down("xs")]: {
+            bottom: '-120px'
+        },  
+    }
+
+}));
 
 
 
@@ -17,8 +50,12 @@ const Search = () => {
     const [movie, setMovie] = useState({});
     const [save, setSave] = useState({});
     const [playlistButton, setPlaylistButton] = React.useState(false)
-    const onClick = () => setPlaylistButton(false)
-  
+    
+    //Styling 
+    const classes = useStyles ();
+    const theme = useTheme ();
+    // const matches = useMediaQuery(theme.breakpoints.down("xs"))
+
     const searchMovies = query => {
         console.log(query)
         API.search(query)
@@ -74,10 +111,10 @@ const Search = () => {
     }
 
         return (
-            // <Container>
                 <Grid 
                 container
-                style={container}
+                className={classes.root}
+                // style={container}
                 justify='center'
                 alignItems='center'
                 direction='column'
@@ -88,7 +125,7 @@ const Search = () => {
                 <Grid item xs={12} lg={10} container>
                     <Header></Header>
                 </Grid>
-                <Grid item xs={12} lg={10} >
+                <Grid item xs={12} lg={10}>
                     <Typography style={actionStyle}>Search YO' MOOOVIE</Typography>
                     <SearchBar
                     value={search.result}
@@ -112,14 +149,13 @@ const Search = () => {
               ) : (
                 <h3>No Results to Display</h3>
               )}
-              <Grid item xs={12} lg={10}>
-                   {playlistButton &&  <Buttons 
-                    style={buttonStyle}
-                    handleCreateMovie={handleCreateMovie}
-                    >Add to Playlist</Buttons>}
-              </Grid>
-            {/* </Container> */}
-            </Grid>
+                <Grid item xs={12} lg={10}>
+                    {playlistButton &&  <Buttons 
+                        className={classes.playlistButton}
+                        handleCreateMovie={handleCreateMovie}
+                        >Add to Playlist</Buttons>}
+                </Grid>
+                </Grid>
         );
 };
 
@@ -149,31 +185,6 @@ const actionStyle = {
     left: '30%',
     right: '30%',
 }
-
-
-const buttonStyle = {
-    background: '#BA0FF7',
-    borderRadius: '18px',
-    fontFamily: 'Luckiest Guy',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: '24px',
-    lineHeight: '24px',
-    position: 'absolute',
-    width: '276px',
-    height: '44px',
-    left: '30%',
-    right: '30%',
-    bottom: '10px'
-}
-
-const container = {
-    backgroundColor: '#FF5200',
-    width: '150vw',
-    height: '100vh',
-    flewgrow: '1',
-    // height: '100%',
-  };
 
 
  
