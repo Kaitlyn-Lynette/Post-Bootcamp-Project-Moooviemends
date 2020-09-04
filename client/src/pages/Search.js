@@ -1,6 +1,5 @@
 import React, { Component,useState, useEffect  } from 'react';
 import Header from '../components/Header';
-import Container from '../components/Container';
 import SearchBar from '../components/SearchBar';
 import MovieCard from '../components/MovieCard';
 import MovieTitle from '../components/MovieTitle';
@@ -9,7 +8,7 @@ import API from "../utils/API";
 import {Grid, Typography} from '@material-ui/core';
 import logo from '../assets/logo.png';
 import {useTheme} from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+// import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
