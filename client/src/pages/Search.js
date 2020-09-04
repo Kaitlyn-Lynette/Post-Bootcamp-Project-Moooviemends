@@ -20,7 +20,10 @@ const useStyles = makeStyles((theme) => ({
         flewgrow: '1',
         [theme.breakpoints.down("xs")]: {
             height: '200vh'
-        },        
+        }, 
+        [theme.breakpoints.up("lg")]: {
+            height: '400vh'
+        },         
     },
     playlistButton: {
         background: '#BA0FF7',

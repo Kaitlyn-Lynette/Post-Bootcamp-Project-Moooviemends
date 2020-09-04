@@ -2,14 +2,27 @@ import React from "react";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import {useTheme} from '@material-ui/core/styles';
+// import useMediaQuery from '@material-ui/core/useMediaQuery';
+import {makeStyles} from "@material-ui/core";
+
+const useStyles = makeStyles ((theme) => ({
+    mediaStyle: {
+        paddingTop: '150%',
+    }
+}))
+
 
 function MovieCard (props) {
-
+    const classes = useStyles ();
+    const theme = useTheme ();
+    
     return (
-    <Card style={cardStyle}>
+    <Card 
+    style={cardStyle}>
         <CardMedia
-            style= {mediaStyle}
-            image= {props.src}
+            className={classes.mediaStyle}
+            image={props.src}
         />
         <CardContent style={contentStyle}>
         <h4>Director: {props.director}</h4>
@@ -31,10 +44,10 @@ const cardStyle = {
     width: "50%",
 }
 
-const mediaStyle = {
-    paddingTop: '150%',
-    height: "250"
-}
+// const mediaStyle = {
+//     paddingTop: '150%',
+//     height: "250"
+// }
 
 const contentStyle = {
     // width: '50%',
