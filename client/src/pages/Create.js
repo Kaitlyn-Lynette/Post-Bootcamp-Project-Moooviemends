@@ -1,20 +1,25 @@
 import React from 'react'
 import Header from '../components/Header'
-import Container from '../components/Container'
 import {Grid, Typography, Paper, Button} from '@material-ui/core';
 import logo from '../assets/logo.png';
-import SearchBar from '../components/SearchBar';
 
 export default function Create () {
 
     return (
-        <Container>
+        <Grid 
+        container
+        style={container}
+        justify='center'
+        alignItems='center'
+        direction='column'
+        >
         <Grid item xs={11} lg={10}>
             <img style={logoStyle} src={logo} alt='logo' />
         </Grid>
         <Grid item xs={11} lg={10}>
             <Typography style={actionStyle}>Mooovie Playlist</Typography>
-            <SearchBar></SearchBar>
+            <Paper style={createBoxStyle}>
+            </Paper>
         </Grid>
         <Grid item xs={11} lg={10}>
             <Typography style={descStyle}>Description</Typography>
@@ -27,17 +32,17 @@ export default function Create () {
         <Grid item xs={11} lg={10}>
             <Header></Header>
         </Grid>
-        </Container>
+        </Grid>
     )
 }
 
 const logoStyle = {
     height: '334px',
     width: '367px',
-    position: '',
-    justify: 'center',
-    top: 0,
-    left: 0
+    left: '30%',
+    right: '30%',
+    position: 'absolute',
+    textAlign: 'center'
 }
 
 const actionStyle = {
@@ -66,6 +71,18 @@ const descStyle = {
     height: '31px',
     left: '12px',
     top: '273px'
+}
+
+const createBoxStyle = {
+    position: 'absolute',
+    width: '312px',
+    height: '37px',
+    left: '23px',
+    top: '206px',
+    background: '#EEEEEE',
+    border: '1px solid #000000',
+    boxSizing: 'border-box',
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
 }
 
 
@@ -99,9 +116,10 @@ const btnFontStyle = {
     lineHeight: '24px'
 }
 
-// const containerStyle = {
-//       height: '40vh',
-//       display: 'flex',
-//       justifyContent: 'center',
-//   };
-
+const container = {
+    backgroundColor: '#FF5200',
+    width: '150vw',
+    height: '100vh',
+    flewgrow: '1',
+    // height: '100%',
+  };

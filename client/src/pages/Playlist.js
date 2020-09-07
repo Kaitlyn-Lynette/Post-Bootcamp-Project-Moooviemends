@@ -48,9 +48,9 @@ export default function Playlist () {
         <Grid item xs={11} lg={10}>
         <Button style = {btnStyle}>Search</Button>
         </Grid>
-        <Grid item xs={11} lg={10}>
+        {/* <Grid item xs={11} lg={10}>
             <h2>No movies added yet!</h2>
-        </Grid>
+        </Grid> */}
         </Grid>
     )
 }
