@@ -1,4 +1,5 @@
 module.exports = {
-    Playlist: require("./Playlist")
+    Movie: require("./Movie"),
+    Playlist: require ("./Playlist")
   };
   

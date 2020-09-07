@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const playlistsController = require('../../controllers/playlistsController');
+const moviesController = require('../../controllers/moviesController');
 
 //Matches with "/api/"
 
 router 
     .route('/')
-    .get(playlistsController.findAll)
-    .post(playlistsController.create);
+    .get(moviesController.findAll)
+    .post(moviesController.create);
 
 
 module.exports = router;

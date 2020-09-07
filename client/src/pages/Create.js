@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
-import {Grid, Typography, Paper, Button} from '@material-ui/core';
+import {Grid, Typography, Paper, Button, TextField} from '@material-ui/core';
 import logo from '../assets/logo.png';
 
 export default function Create () {
@@ -18,13 +18,18 @@ export default function Create () {
         </Grid>
         <Grid item xs={11} lg={10}>
             <Typography style={actionStyle}>Mooovie Playlist</Typography>
-            <Paper style={createBoxStyle}>
-            </Paper>
+            <TextField style={createBoxStyle}>
+            </TextField>
         </Grid>
         <Grid item xs={11} lg={10}>
             <Typography style={descStyle}>Description</Typography>
-            <Paper style={descBoxStyle}>
-            </Paper>
+            <TextField
+            style={descBoxStyle}
+            id="outlined-multiline-static"
+            multiline
+            rows={4}
+            variant="filled"
+            />
         </Grid>
         <Grid item xs={11} lg={10}>
             <Button style={btnStyle}><Typography style={btnFontStyle}>Create</Typography></Button>

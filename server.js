@@ -8,7 +8,7 @@ const dbConnection = require('./config/middleware/db_connection');
 const MongoStore = require('connect-mongo')(session);
 //Express server
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 app
   .use(bodyParser.urlencoded({ extended: false }))
