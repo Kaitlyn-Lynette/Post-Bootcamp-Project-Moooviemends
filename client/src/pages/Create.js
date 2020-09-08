@@ -1,29 +1,38 @@
-import React from 'react'
+import React, {useState} from 'react';
 import Header from '../components/Header'
 import {Grid, Typography, Button, Input} from '@material-ui/core';
 import logo from '../assets/logo.png';
+import API from "../utils/API";
 
 export default function Create () {
   
-    const state = {
-        title: "", 
-        description: ""
-    };
+    const [title, setTitle] = useState();
+    const [description, setDescription] = useState();
+    const [playlist, setPlaylist] = useState ();
 
-    const handleInputChange = event => {
-        let value = event.target.value;
-        const name = event.target.name;
-        this.setState ({
-            [name]: value
-        });
-    };
 
-    const handleFormSubmit = event => {
+    const handleCreatePlaylist = (event) => {
         event.preventDefault();
-        this.setState ({
-            title: "",
-            description: ""
-        });
+        setPlaylist({
+            title: title,
+            description: description
+        })
+        console.log(playlist);
+        API.createPlaylist(playlist)
+            .then((res)=> {
+            console.log(res)
+            console.log("I'm listening")
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+  
+    const handleFormSubmit = (event)=> {
+        event.preventDefault();
+        console.log("title is " + title);
+        console.log("description is " + description);
+        handleCreatePlaylist(playlist)
     };
 
     return (
@@ -40,10 +49,9 @@ export default function Create () {
         <Grid item xs={11} lg={10}>
             <Typography style={actionStyle}>Playlist Title</Typography>
             <Input 
-            value = {state.title}
             style={createBoxStyle}
             name="title"
-            onChange={handleInputChange}
+            onChange={e => setTitle(e.target.value)}
             type="text"
             placeholder="Cartoon movies"
             />
@@ -51,10 +59,9 @@ export default function Create () {
         <Grid item xs={11} lg={10}>
             <Typography style={descStyle}>Description</Typography> 
             <Input 
-            value = {state.description}
             style={descBoxStyle}
             name="description"
-            onChange={handleInputChange}
+            onChange={e => setDescription(e.target.value)}
             type="text"
             placeholder="Love me some good cartoon movies"
             id="outlined-multiline-static"
