@@ -1,9 +1,30 @@
 import React from 'react'
 import Header from '../components/Header'
-import {Grid, Typography, Paper, Button, TextField} from '@material-ui/core';
+import {Grid, Typography, Button, Input} from '@material-ui/core';
 import logo from '../assets/logo.png';
 
 export default function Create () {
+  
+    const state = {
+        title: "", 
+        description: ""
+    };
+
+    const handleInputChange = event => {
+        let value = event.target.value;
+        const name = event.target.name;
+        this.setState ({
+            [name]: value
+        });
+    };
+
+    const handleFormSubmit = event => {
+        event.preventDefault();
+        this.setState ({
+            title: "",
+            description: ""
+        });
+    };
 
     return (
         <Grid 
@@ -17,14 +38,25 @@ export default function Create () {
             <img style={logoStyle} src={logo} alt='logo' />
         </Grid>
         <Grid item xs={11} lg={10}>
-            <Typography style={actionStyle}>Mooovie Playlist</Typography>
-            <TextField style={createBoxStyle}>
-            </TextField>
+            <Typography style={actionStyle}>Playlist Title</Typography>
+            <Input 
+            value = {state.title}
+            style={createBoxStyle}
+            name="title"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="Cartoon movies"
+            />
         </Grid>
         <Grid item xs={11} lg={10}>
-            <Typography style={descStyle}>Description</Typography>
-            <TextField
+            <Typography style={descStyle}>Description</Typography> 
+            <Input 
+            value = {state.description}
             style={descBoxStyle}
+            name="description"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="Love me some good cartoon movies"
             id="outlined-multiline-static"
             multiline
             rows={4}
@@ -32,7 +64,11 @@ export default function Create () {
             />
         </Grid>
         <Grid item xs={11} lg={10}>
-            <Button style={btnStyle}><Typography style={btnFontStyle}>Create</Typography></Button>
+            <Button 
+            style={btnStyle} 
+            onClick={handleFormSubmit}>
+                <Typography style={btnFontStyle}>Create</Typography>
+            </Button>
         </Grid>
         <Grid item xs={11} lg={10}>
             <Header></Header>
