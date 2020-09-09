@@ -7,41 +7,26 @@ import API from "../utils/API";
 
 export default function Create () {
   
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [playlist, setPlaylist] = useState({});
-  
-    const handleFormSubmit = (e)=> {
-        e.preventDefault();
-        console.log("title is " + title);
-        console.log("description is " + description);
-        setPlaylist({
-            title: title, 
-            description: description
-        })
-        console.log('does playlist exist', playlist)
+    // const [title, setTitle] = useState('');
+    // const [description, setDescription] = useState('');
+    const [playlist, setPlaylist] = useState({title: "", description:""});
+
+
+    const handleCreatePlaylist = e => {
+        const { name, value } = e.target;
+        setPlaylist(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
         API.createPlaylist(playlist)
             .then((res)=> {
-            console.log(res)
-            console.log("I'm listening")
             })
             .catch((err) => {
                 console.log(err);
             });
         console.log('this is the playlist object', playlist)
-    };
-
-
-    // const handleCreatePlaylist = (e) => {
-    //     e.preventDefault();
-    //     setPlaylist({
-    //         title: title, 
-    //         description: description
-    //     })
-    //     console.log('this is the playlist object', playlist)
-    // }
-
-
+        };
+  
     return (
         <Grid 
         container
@@ -56,9 +41,11 @@ export default function Create () {
         <Grid item xs={11} lg={10}>
             <Typography style={actionStyle}>Playlist Title</Typography>
             <Input 
+            value={playlist.title}
             style={createBoxStyle}
             name="title"
-            onChange={e => setTitle(e.target.value)}
+            // onChange={e => setTitle(e.target.value)}
+            onChange={handleCreatePlaylist}
             type="text"
             placeholder="Cartoon movies"
             />
@@ -66,9 +53,11 @@ export default function Create () {
         <Grid item xs={11} lg={10}>
             <Typography style={descStyle}>Description</Typography> 
             <Input 
+            value={playlist.description}
             style={descBoxStyle}
             name="description"
-            onChange={e => setDescription(e.target.value)}
+            onChange={handleCreatePlaylist}
+            // onChange={e => setDescription(e.target.value)}
             type="text"
             placeholder="Love me some good cartoon movies"
             id="outlined-multiline-static"
@@ -80,7 +69,7 @@ export default function Create () {
         <Grid item xs={11} lg={10}>
             <Buttons 
             style={btnStyle} 
-            onClick={handleFormSubmit}
+            onClick={handleCreatePlaylist}
             >
                 <Typography style={btnFontStyle}>Create</Typography>
             </Buttons>
