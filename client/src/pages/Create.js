@@ -1,16 +1,13 @@
 import React, {useState} from 'react';
 import Header from '../components/Header';
 import Buttons from '../components/Buttons';
-import {Grid, Typography, Button, Input} from '@material-ui/core';
+import {Grid, Typography, Input} from '@material-ui/core';
 import logo from '../assets/logo.png';
 import API from "../utils/API";
 
 export default function Create () {
   
-    // const [title, setTitle] = useState('');
-    // const [description, setDescription] = useState('');
     const [playlist, setPlaylist] = useState({title: "", description:""});
-
 
     const handleCreatePlaylist = e => {
         const { name, value } = e.target;
@@ -44,7 +41,6 @@ export default function Create () {
             value={playlist.title}
             style={createBoxStyle}
             name="title"
-            // onChange={e => setTitle(e.target.value)}
             onChange={handleCreatePlaylist}
             type="text"
             placeholder="Cartoon movies"
@@ -57,7 +53,6 @@ export default function Create () {
             style={descBoxStyle}
             name="description"
             onChange={handleCreatePlaylist}
-            // onChange={e => setDescription(e.target.value)}
             type="text"
             placeholder="Love me some good cartoon movies"
             id="outlined-multiline-static"
