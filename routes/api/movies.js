@@ -9,5 +9,11 @@ router
     .post(moviesController.create);
 
 
+// router 
+//     .route('/:id')
+//     .get(moviesController.findById)
+//     .put(moviesController.update)
+//     .delete(postsController.remove);
+
 module.exports = router;
 

@@ -22,10 +22,10 @@ export default {
   
   //Playlist Routes
   //Get the playlist from database
-  getPlaylists: function () {
+  getPlaylist: function () {
     return axios.get('api/playlists');
   },
-  updatePlaylists: function (nameData) {
+  createPlaylist: function (nameData) {
     return axios.post('api/playlists',nameData);
   }
 

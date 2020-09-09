@@ -154,7 +154,7 @@ const Search = () => {
                 <Grid item xs={12} lg={10}>
                     {playlistButton &&  <Buttons 
                         className={classes.playlistButton}
-                        handleCreateMovie={handleCreateMovie}
+                        onClick={handleCreateMovie}
                         >Add to Playlist</Buttons>}
                 </Grid>
                 </Grid>

@@ -1,23 +1,25 @@
 import React, {useState} from 'react';
-import Header from '../components/Header'
+import Header from '../components/Header';
+import Buttons from '../components/Buttons';
 import {Grid, Typography, Button, Input} from '@material-ui/core';
 import logo from '../assets/logo.png';
 import API from "../utils/API";
 
 export default function Create () {
   
-    const [title, setTitle] = useState();
-    const [description, setDescription] = useState();
-    const [playlist, setPlaylist] = useState ();
-
-
-    const handleCreatePlaylist = (event) => {
-        event.preventDefault();
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [playlist, setPlaylist] = useState({});
+  
+    const handleFormSubmit = (e)=> {
+        e.preventDefault();
+        console.log("title is " + title);
+        console.log("description is " + description);
         setPlaylist({
-            title: title,
+            title: title, 
             description: description
         })
-        console.log(playlist);
+        console.log('does playlist exist', playlist)
         API.createPlaylist(playlist)
             .then((res)=> {
             console.log(res)
@@ -26,14 +28,19 @@ export default function Create () {
             .catch((err) => {
                 console.log(err);
             });
-    }
-  
-    const handleFormSubmit = (event)=> {
-        event.preventDefault();
-        console.log("title is " + title);
-        console.log("description is " + description);
-        handleCreatePlaylist(playlist)
+        console.log('this is the playlist object', playlist)
     };
+
+
+    // const handleCreatePlaylist = (e) => {
+    //     e.preventDefault();
+    //     setPlaylist({
+    //         title: title, 
+    //         description: description
+    //     })
+    //     console.log('this is the playlist object', playlist)
+    // }
+
 
     return (
         <Grid 
@@ -71,11 +78,12 @@ export default function Create () {
             />
         </Grid>
         <Grid item xs={11} lg={10}>
-            <Button 
+            <Buttons 
             style={btnStyle} 
-            onClick={handleFormSubmit}>
+            onClick={handleFormSubmit}
+            >
                 <Typography style={btnFontStyle}>Create</Typography>
-            </Button>
+            </Buttons>
         </Grid>
         <Grid item xs={11} lg={10}>
             <Header></Header>
@@ -171,3 +179,6 @@ const container = {
     flewgrow: '1',
     // height: '100%',
   };
+
+
+

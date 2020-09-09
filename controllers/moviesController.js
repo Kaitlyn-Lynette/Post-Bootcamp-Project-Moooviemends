@@ -22,4 +22,5 @@
                 res.status(422).json(err)
             });
 
-        }}
+        }
+}
