@@ -8,7 +8,7 @@ const dbConnection = require('./config/middleware/db_connection');
 const MongoStore = require('connect-mongo')(session);
 //Express server
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 app
   .use(bodyParser.urlencoded({ extended: false }))
@@ -23,15 +23,17 @@ app
       saveUninitialized: false, //required
     })
   )
-//Connecting to the routes
-app.use(routes);
  
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+}
 
 
+//Connecting to the routes
+app.use(routes);
+
+//Start the API server
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
-}

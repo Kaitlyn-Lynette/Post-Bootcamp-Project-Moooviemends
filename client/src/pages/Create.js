@@ -10,6 +10,7 @@ export default function Create () {
     const [playlist, setPlaylist] = useState({title: "", description:""});
 
     const handleCreatePlaylist = e => {
+        e.preventDefault();
         const { name, value } = e.target;
         setPlaylist(prevState => ({
             ...prevState,
@@ -17,6 +18,7 @@ export default function Create () {
         }));
         API.createPlaylist(playlist)
             .then((res)=> {
+                console.log("I'm listening")
             })
             .catch((err) => {
                 console.log(err);
