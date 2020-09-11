@@ -137,7 +137,7 @@ const Search = () => {
                     </SearchBar>
                 </Grid>
                 {movie.title ? (
-                <Grid item xs={12} lg={10}>
+                <Grid item xs={6} lg={10}>
                     <MovieTitle>
                         {movie.title || "Search for a movie to begin"}
                     </MovieTitle>
@@ -147,19 +147,18 @@ const Search = () => {
                     genre={movie.genre}
                     released={movie.released}
                     />
+                    <PlaylistButtons
+                    onClick={handleSaveMovie}></PlaylistButtons>
                 </Grid>
               ) : (
                 <h3>No Results to Display</h3>
               )}
-                <Grid item xs={12} lg={10}>
-                    {/* {playlistButton &&  <Buttons 
+                {/* <Grid item xs={12} lg={10}>
+                   {playlistButton &&  <Buttons 
                     className={classes.playlistButton}
                     onClick={handleSaveMovie}
-                    >Add to Playlist</Buttons>} */}  
-
-                    <PlaylistButtons
-                    onClick={handleSaveMovie}></PlaylistButtons>
-                </Grid>
+                    >Add to Playlist</Buttons>}  
+                </Grid> */}
             </Grid>
         );
 };

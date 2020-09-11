@@ -21,18 +21,21 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'normal',
         fontSize: '24px',
         lineHeight: '24px',
-        position: 'absolute',
-        width: '300px',
-        height: '44px',
+        // position: 'absolute',
+        width: '200px',
+        height: '40px',
+        // left: '230px',
+        top: '487px',
         left: '30%',
-        right: '30%',
-        [theme.breakpoints.down("xs")]: {
-            bottom: '-120px'
-        },  
+        right: '30%'
+
+        // [theme.breakpoints.down("xs")]: {
+        //     bottom: '-120px'
+        // },  
     },
   }));
 
-export default function PlaylistButtons () {
+export default function PlaylistButtons (props) {
     //Setting the component's initial state 
     const [playlists, setPlaylist] = useState([]);
     const classes = useStyles ();
@@ -58,12 +61,14 @@ export default function PlaylistButtons () {
                 <ListItem 
                 button={playlist._id}
                 className={classes.playlistButton}
-                // {...props}
+                {...props}
                 >
                     <ListItemText>{playlist.title}</ListItemText>
-                </ListItem>
+                </ListItem>                
             );
             })}
+        
+            
         </List>
 
         // <List component="nav" className={classes.root} aria-label="contacts">
