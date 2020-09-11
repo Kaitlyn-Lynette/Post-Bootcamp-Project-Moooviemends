@@ -1,13 +1,13 @@
-import React, { Component,useState, useEffect  } from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import MovieCard from '../components/MovieCard';
 import MovieTitle from '../components/MovieTitle';
-import Buttons from '../components/Buttons';
+import PlaylistButtons from '../components/PlaylistButtons';
 import API from "../utils/API";
 import {Grid, Typography} from '@material-ui/core';
 import logo from '../assets/logo.png';
-import {useTheme} from '@material-ui/core/styles';
+// import {useTheme} from '@material-ui/core/styles';
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {makeStyles} from "@material-ui/core";
 
@@ -40,23 +40,27 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("xs")]: {
             bottom: '-120px'
         },  
-    }
+    },
+    list: {
+        width: '100%',
+        maxWidth: 360,
+        backgroundColor: theme.palette.background.paper,
+      },
 
 }));
 
 
 
 const Search = () => {
-
     const [search, setSearch] = useState('');
     const [movie, setMovie] = useState({});
     const [save, setSave] = useState({});
     const [playlistButton, setPlaylistButton] = React.useState(false)
+    // This will be for pulling the playlists from the database to show as buttons
     
     //Styling 
     const classes = useStyles ();
-    const theme = useTheme ();
-    // const matches = useMediaQuery(theme.breakpoints.down("xs"))
+    // const theme = useTheme ();
 
     const searchMovies = query => {
         console.log(query)
@@ -76,15 +80,12 @@ const Search = () => {
             });
     };
 
-
-
-    // When the form is submitted, search the OMDB API for the value of `this.state.search`
+    // When the form is submitted, search the OMDB API for the movie
    const handleInputChange = event => {
         const {value} = event.target; 
         setSearch(value)
         console.log('this is the value', value);
     };
-
 
     const handleFormSubmit = event => {
         event.preventDefault();
@@ -93,8 +94,7 @@ const Search = () => {
         setPlaylistButton(!playlistButton)
     };
 
-    
-    const handleCreateMovie = (event) => {
+    const handleSaveMovie = (event) => {
         event.preventDefault();
         setSave({
             title: movie.title, 
@@ -108,19 +108,19 @@ const Search = () => {
             console.log("I'm listening")
             })
             .catch((err) => {
+
                 console.log(err);
             });
     }
-
         return (
-                <Grid 
-                container
-                className={classes.root}
-                // style={container}
-                justify='center'
-                alignItems='center'
-                direction='column'
-                >
+            <Grid 
+            container
+            className={classes.root}
+            // style={container}
+            justify='center'
+            alignItems='center'
+            direction='column'
+            >
                 <Grid item xs={12} lg={10}>
                     <img style={logoStyle} src={logo} alt='logo' />
                 </Grid>
@@ -152,12 +152,15 @@ const Search = () => {
                 <h3>No Results to Display</h3>
               )}
                 <Grid item xs={12} lg={10}>
-                    {playlistButton &&  <Buttons 
-                        className={classes.playlistButton}
-                        onClick={handleCreateMovie}
-                        >Add to Playlist</Buttons>}
+                    {/* {playlistButton &&  <Buttons 
+                    className={classes.playlistButton}
+                    onClick={handleSaveMovie}
+                    >Add to Playlist</Buttons>} */}  
+
+                    <PlaylistButtons
+                    onClick={handleSaveMovie}></PlaylistButtons>
                 </Grid>
-                </Grid>
+            </Grid>
         );
 };
 
