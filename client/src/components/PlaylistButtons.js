@@ -2,37 +2,50 @@ import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import API from "../utils/API";
 import List from '@material-ui/core/List';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import StarIcon from '@material-ui/icons/Star';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
       maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
+    //   backgroundColor: theme.palette.background.paper,
     },
     playlistButton: {
         background: '#BA0FF7',
         borderRadius: '18px',
         fontFamily: 'Luckiest Guy',
         fontStyle: 'normal',
-        fontWeight: 'normal',
+        // fontWeight: 'normal',
         fontSize: '24px',
         lineHeight: '24px',
-        // position: 'absolute',
-        width: '200px',
+        width: '111px',
         height: '40px',
+        borderRadius: '17px',
+        backgroundColor: 'rgba(219, 253, 11, 0.9)',
+        // fontFamily: 'Luckiest Guy',
+        // position: 'absolute',
+        // width: '200px',
+        // height: '40px',
         // left: '230px',
-        top: '487px',
+        // top: '487px',
         left: '30%',
         right: '30%'
-
         // [theme.breakpoints.down("xs")]: {
         //     bottom: '-120px'
         // },  
     },
+    typography: {
+        fontFamily: 'LuckiestGuy',
+        fontSize: '24px',
+        fontWeight: 'normal',
+        fontStretch: 'normal',
+        fontStyle: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: 'normal',
+        color:'#000000'
+    }
   }));
 
 export default function PlaylistButtons (props) {
@@ -61,26 +74,12 @@ export default function PlaylistButtons (props) {
                 <ListItem 
                 button={playlist._id}
                 className={classes.playlistButton}
-                {...props}
+                // {...props}
                 >
-                    <ListItemText>{playlist.title}</ListItemText>
+                    <ListItemText classname={classes.typography}> {playlist.title}</ListItemText>
                 </ListItem>                
             );
-            })}
-        
-            
+            })}    
         </List>
-
-        // <List component="nav" className={classes.root} aria-label="contacts">
-        // <ListItem button>
-        //     <ListItemIcon>
-        //     <StarIcon />
-        //     </ListItemIcon>
-        //     <ListItemText primary="Chelsea Otakan" />
-        // </ListItem>
-        // <ListItem button>
-        //     <ListItemText inset primary="Eric Hoffman" />
-        // </ListItem>
-        // </List>
     )
 }

@@ -35,11 +35,18 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         width: '300px',
         height: '44px',
-        left: '30%',
-        right: '30%',
+        left: '215px',
+        top: '477px',
+
+        // left: '30%',
+        // right: '30%',
         [theme.breakpoints.down("xs")]: {
-            bottom: '-120px'
+            bottom: '-120px',
+            left: '-215px',
+            // top: '477px'
+
         },  
+
     },
     list: {
         width: '100%',
@@ -124,7 +131,7 @@ const Search = () => {
                 <Grid item xs={12} lg={10}>
                     <img style={logoStyle} src={logo} alt='logo' />
                 </Grid>
-                <Grid item xs={12} lg={10} container>
+                <Grid item xs={12} lg={10}>
                     <Header></Header>
                 </Grid>
                 <Grid item xs={12} lg={10}>
@@ -137,28 +144,32 @@ const Search = () => {
                     </SearchBar>
                 </Grid>
                 {movie.title ? (
-                <Grid item xs={6} lg={10}>
-                    <MovieTitle>
-                        {movie.title || "Search for a movie to begin"}
-                    </MovieTitle>
-                    <MovieCard
-                    src={movie.poster}
-                    director={movie.director}
-                    genre={movie.genre}
-                    released={movie.released}
-                    />
-                    <PlaylistButtons
-                    onClick={handleSaveMovie}></PlaylistButtons>
+                <Grid item xs={6} lg={10} 
+                container
+                direction='row'
+                >
+                    <Grid item xs={6} lg={10}>
+                        <MovieTitle>
+                            {movie.title || "Search for a movie to begin"}
+                        </MovieTitle>
+                        <MovieCard
+                        src={movie.poster}
+                        director={movie.director}
+                        genre={movie.genre}
+                        released={movie.released}
+                        />
+                        </Grid>
+                    
+                    <Grid item xs={6} lg={10}>
+                        <Typography style={playlistStyle}>Add to Playlist</Typography>
+                        <PlaylistButtons
+                        onClick={handleSaveMovie}
+                        ></PlaylistButtons>    
+                    </Grid>
                 </Grid>
-              ) : (
-                <h3>No Results to Display</h3>
-              )}
-                {/* <Grid item xs={12} lg={10}>
-                   {playlistButton &&  <Buttons 
-                    className={classes.playlistButton}
-                    onClick={handleSaveMovie}
-                    >Add to Playlist</Buttons>}  
-                </Grid> */}
+                ) : (
+                 <h3>No Results to Display</h3>
+                )} 
             </Grid>
         );
 };
@@ -190,6 +201,18 @@ const actionStyle = {
     right: '30%',
 }
 
+const playlistStyle = {
+    width: '142px',
+    height: '45px',
+    fontFamily: 'LuckiestGuy',
+    fontSize: '24px',
+    fontWeight: 'normal',
+    fontStretch: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 'normal',
+    letterSpacing: 'normal',
+    color: '#000000'
+}
 
  
 export default Search;
