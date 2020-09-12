@@ -24,36 +24,11 @@ const useStyles = makeStyles((theme) => ({
             height: '400vh'
         },         
     },
-    playlistButton: {
-        background: '#BA0FF7',
-        borderRadius: '18px',
-        fontFamily: 'Luckiest Guy',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '24px',
-        lineHeight: '24px',
-        position: 'absolute',
-        width: '300px',
-        height: '44px',
-        left: '215px',
-        top: '477px',
-
-        // left: '30%',
-        // right: '30%',
-        [theme.breakpoints.down("xs")]: {
-            bottom: '-120px',
-            left: '-215px',
-            // top: '477px'
-
-        },  
-
-    },
     list: {
         width: '100%',
         maxWidth: 360,
         backgroundColor: theme.palette.background.paper,
-      },
-
+      }
 }));
 
 
@@ -204,7 +179,7 @@ const actionStyle = {
 const playlistStyle = {
     width: '142px',
     height: '45px',
-    fontFamily: 'LuckiestGuy',
+    fontFamily: 'Luckiest Guy',
     fontSize: '24px',
     fontWeight: 'normal',
     fontStretch: 'normal',

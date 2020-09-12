@@ -10,41 +10,21 @@ const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
       maxWidth: 360,
-    //   backgroundColor: theme.palette.background.paper,
     },
     playlistButton: {
         background: '#BA0FF7',
         borderRadius: '18px',
         fontFamily: 'Luckiest Guy',
-        fontStyle: 'normal',
-        // fontWeight: 'normal',
+        fontStyle: 'bold',
         fontSize: '24px',
         lineHeight: '24px',
-        width: '111px',
+        width: '150px',
         height: '40px',
         borderRadius: '17px',
-        backgroundColor: 'rgba(219, 253, 11, 0.9)',
-        // fontFamily: 'Luckiest Guy',
-        // position: 'absolute',
-        // width: '200px',
-        // height: '40px',
-        // left: '230px',
-        // top: '487px',
-        left: '30%',
-        right: '30%'
-        // [theme.breakpoints.down("xs")]: {
-        //     bottom: '-120px'
-        // },  
-    },
-    typography: {
-        fontFamily: 'LuckiestGuy',
-        fontSize: '24px',
-        fontWeight: 'normal',
-        fontStretch: 'normal',
-        fontStyle: 'normal',
-        lineHeight: 'normal',
-        letterSpacing: 'normal',
-        color:'#000000'
+        backgroundColor: '#FFFF00',
+        // left: '30%',
+        right: '30%',
+        margin: '10px'
     }
   }));
 
@@ -74,9 +54,9 @@ export default function PlaylistButtons (props) {
                 <ListItem 
                 button={playlist._id}
                 className={classes.playlistButton}
-                // {...props}
+                {...props}
                 >
-                    <ListItemText classname={classes.typography}> {playlist.title}</ListItemText>
+                    <ListItemText> {playlist.title}</ListItemText>
                 </ListItem>                
             );
             })}    

@@ -39,7 +39,7 @@ const cardStyle = {
     right: '30%',
     top: '363.46px',
     margin: '0px auto',
-    backgroundColor: "yellow",
+    backgroundColor: "#FFFF00",
     fontFamily: "Roboto",
     width: "50%",
 }
