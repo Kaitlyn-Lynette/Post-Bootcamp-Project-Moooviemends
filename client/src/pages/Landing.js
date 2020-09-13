@@ -20,9 +20,9 @@ export default function Landing () {
             <Grid item>
                 <Header></Header>
             </Grid>
-            {/* <Grid item>
+            <Grid item>
                 <Typography style={slogan}>Make your moooviemends to your friends</Typography>
-            </Grid> */}
+            </Grid>
         </Grid>)
 }
 
@@ -36,19 +36,16 @@ const logoStyle = {
 
 const slogan = {
     position: 'absolute',
-    width: '297px',
-    height: '61px',
-    left: '30%',
-    right: '30%',
-    top: '402px',
+    width: '80.9%',
+    height: '9%',
+    left: '10%',
     fontFamily: 'Crafty Girls',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '36px',
+    color: '#FFFFFF',
     lineHeight: '52px',
     textAlign: 'center',
-    color: '#000000'
-
 }
 
 
