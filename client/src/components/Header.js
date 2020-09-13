@@ -4,14 +4,11 @@ import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles (() => ({
     title: {
-        fontFamily: 'Luckiest Guy',
+        color: '#FFFFFF',
+        position: 'relative',
         fontSize: '3em',
-        display: 'flex',
-        marginTop: '5px',
-        position: 'absolute',
-        // left: '20px'
-        left: '30%',
-        right: '30%',
+        fontFamily: 'Luckiest Guy',
+        bottom:'250px'
     }
 }));
 

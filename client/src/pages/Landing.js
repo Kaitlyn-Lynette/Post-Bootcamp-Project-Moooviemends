@@ -7,7 +7,6 @@ import logo from '../assets/logo.png';
 export default function Landing () {
 
     return (
-        // <Container>
         <Grid 
         container
         style={container}
@@ -15,28 +14,25 @@ export default function Landing () {
         alignItems='center'
         direction='column'
         >
-            <Grid item xs={11} lg={10}>
+            <Grid item>
                 <img style={logoStyle} src={logo} alt='logo' />
             </Grid>
-            <Grid item xs={11} lg={10}>
+            <Grid item>
                 <Header></Header>
             </Grid>
-            <Grid item xs={11} lg={10}>
-                <Typography style={slogan}>Make your movie mends to your friends</Typography>
-            </Grid>
-        {/* </Container> */}
+            {/* <Grid item>
+                <Typography style={slogan}>Make your moooviemends to your friends</Typography>
+            </Grid> */}
         </Grid>)
 }
 
 const logoStyle = {
-    height: '334px',
-    width: '367px',
-    left: '30%',
-    right: '30%',
-    position: 'absolute',
-    textAlign: 'center'
+    height: '50%',
+    width: '100%',
+    position: 'fixed',
+    top: '20px',
+    left: '0px'
 }
-
 
 const slogan = {
     position: 'absolute',
@@ -58,8 +54,9 @@ const slogan = {
 
 const container = {
     backgroundColor: '#FF5200',
-    width: '150vw',
+    width: '100vw',
     height: '100vh',
     flewgrow: '1',
-    // height: '100%',
+    // zIndex: '-1',
+    // position: 'relative'
   };
