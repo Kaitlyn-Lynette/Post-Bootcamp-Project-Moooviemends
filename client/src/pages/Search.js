@@ -5,10 +5,8 @@ import MovieCard from '../components/MovieCard';
 import MovieTitle from '../components/MovieTitle';
 import PlaylistButtons from '../components/PlaylistButtons';
 import API from "../utils/API";
+import Logo from '../components/Logo';
 import {Grid, Typography} from '@material-ui/core';
-import logo from '../assets/logo.png';
-// import {useTheme} from '@material-ui/core/styles';
-// import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -98,13 +96,12 @@ const Search = () => {
             <Grid 
             container
             className={classes.root}
-            // style={container}
             justify='center'
             alignItems='center'
             direction='column'
             >
                 <Grid item xs={12} lg={10}>
-                    <img style={logoStyle} src={logo} alt='logo' />
+                    <Logo></Logo>
                 </Grid>
                 <Grid item xs={12} lg={10}>
                     <Header></Header>
@@ -150,23 +147,13 @@ const Search = () => {
 };
 
 
-const logoStyle = {
-    height: '334px',
-    width: '367px',
-    left: '30%',
-    right: '30%',
-    position: 'absolute',
-    textAlign: 'center'
-}
-
-
 const actionStyle = {
     fontFamily: 'Luckiest Guy',
     fontStyle: 'normal',
     fontWeight: 'normal',
     fontSize: '24px',
     lineHeight: '24px',
-    color: '#000000',
+    color: '#FFFFFF',
     position: 'absolute',
     justify: 'center',
     width: '274px',

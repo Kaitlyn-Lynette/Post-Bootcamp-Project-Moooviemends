@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import Header from '../components/Header';
 import Buttons from '../components/Buttons';
+import Logo from '../components/Logo';
 import {Grid, Typography, Input} from '@material-ui/core';
-import logo from '../assets/logo.png';
 import API from "../utils/API";
 
 export default function Create () {
@@ -34,21 +34,24 @@ export default function Create () {
         alignItems='center'
         direction='column'
         >
-        <Grid item xs={11} lg={10}>
-            <img style={logoStyle} src={logo} alt='logo' />
+        <Grid item>
+            <Logo></Logo>
         </Grid>
-        <Grid item xs={11} lg={10}>
-            <Typography style={actionStyle}>Playlist Title</Typography>
+        <Grid item>
+            <Header></Header>
+        </Grid>
+        <Grid item>
+            <Typography style={titleStyle}>Playlist Title</Typography>
             <Input 
             value={playlist.title}
-            style={createBoxStyle}
+            style={titleBoxStyle}
             name="title"
             onChange={handleCreatePlaylist}
             type="text"
             placeholder="Cartoon movies"
             />
         </Grid>
-        <Grid item xs={11} lg={10}>
+        <Grid item>
             <Typography style={descStyle}>Description</Typography> 
             <Input 
             value={playlist.description}
@@ -63,31 +66,20 @@ export default function Create () {
             variant="filled"
             />
         </Grid>
-        <Grid item xs={11} lg={10}>
+        <Grid item>
             <Buttons 
             style={btnStyle} 
             onClick={handleCreatePlaylist}
             >
-                <Typography style={btnFontStyle}>Create</Typography>
+            <Typography style={btnFontStyle}>Create</Typography>
             </Buttons>
-        </Grid>
-        <Grid item xs={11} lg={10}>
-            <Header></Header>
-        </Grid>
+        </Grid> 
         </Grid>
     )
 }
 
-const logoStyle = {
-    height: '334px',
-    width: '367px',
-    left: '30%',
-    right: '30%',
-    position: 'absolute',
-    textAlign: 'center'
-}
 
-const actionStyle = {
+const titleStyle = {
     fontFamily: 'Luckiest Guy',
     fontStyle: 'normal',
     fontWeight: 'normal',
@@ -95,10 +87,22 @@ const actionStyle = {
     lineHeight: '24px',
     color: '#000000',
     position: 'absolute',
-    width: '274px',
-    height: '24px',
-    left: '12px',
-    top: '174px'
+    width: '74.7%',
+    height: '3.5%',
+    left: '5%',
+    top: '30%'
+}
+
+const titleBoxStyle = {
+    position: 'absolute',
+    width: '85%',
+    height: '5.4%',
+    left: '5%',
+    top: '35%',
+    background: '#EEEEEE',
+    border: '1px solid #000000',
+    boxSizing: 'border-box',
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
 }
 
 const descStyle = {
@@ -107,33 +111,20 @@ const descStyle = {
     fontWeight: 'normal',
     fontSize: '24px',
     lineHeight: '24px',
-    color: '#000000',
+    color: '	#000000',
     position: 'absolute',
-    width: '248px',
-    height: '31px',
-    left: '12px',
-    top: '273px'
+    width: '34.8%',
+    height: '9.3%',
+    left: '5%',
+    top: '45%'
 }
-
-const createBoxStyle = {
-    position: 'absolute',
-    width: '312px',
-    height: '37px',
-    left: '23px',
-    top: '206px',
-    background: '#EEEEEE',
-    border: '1px solid #000000',
-    boxSizing: 'border-box',
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-}
-
 
 const descBoxStyle = {
     position: 'absolute',
-    width: '312px',
-    height: '103px',
-    left: '23px',
-    top: '304px',
+    width: '85%',
+    height: '15.1%',
+    left: '5%',
+    top: '50%',
     background: '#EEEEEE',
     border: '1px solid #000000',
     boxSizing: 'border-box',
@@ -142,10 +133,10 @@ const descBoxStyle = {
 
 const btnStyle = {
     position: 'absolute',
-    width: '118px',
-    height: '32px',
-    left: '26px',
-    top: '430px',
+    width: '32.3%',
+    height: '4.7%',
+    left: '5%',
+    top: '69%',
     background: '#BA0FF7',
     borderRadius: '18px',
 }
@@ -160,10 +151,9 @@ const btnFontStyle = {
 
 const container = {
     backgroundColor: '#FF5200',
-    width: '150vw',
+    width: '100vw',
     height: '100vh',
     flewgrow: '1',
-    // height: '100%',
   };
 
 

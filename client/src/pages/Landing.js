@@ -1,8 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
-import Container from '../components/Container';
+import Logo from '../components/Logo';
 import {Grid, Typography } from '@material-ui/core';
-import logo from '../assets/logo.png';
 
 export default function Landing () {
 
@@ -15,7 +14,7 @@ export default function Landing () {
         direction='column'
         >
             <Grid item>
-                <img style={logoStyle} src={logo} alt='logo' />
+                <Logo></Logo>
             </Grid>
             <Grid item>
                 <Header></Header>
@@ -24,14 +23,6 @@ export default function Landing () {
                 <Typography style={slogan}>Make your moooviemends to your friends</Typography>
             </Grid>
         </Grid>)
-}
-
-const logoStyle = {
-    height: '50%',
-    width: '100%',
-    position: 'fixed',
-    top: '20px',
-    left: '0px'
 }
 
 const slogan = {
@@ -48,12 +39,9 @@ const slogan = {
     textAlign: 'center',
 }
 
-
 const container = {
     backgroundColor: '#FF5200',
     width: '100vw',
     height: '100vh',
     flewgrow: '1',
-    // zIndex: '-1',
-    // position: 'relative'
   };
