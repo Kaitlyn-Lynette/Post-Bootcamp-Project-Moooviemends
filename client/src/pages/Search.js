@@ -100,10 +100,10 @@ const Search = () => {
             alignItems='center'
             direction='column'
             >
-                <Grid item xs={12} lg={10}>
+                <Grid item>
                     <Logo></Logo>
                 </Grid>
-                <Grid item xs={12} lg={10}>
+                <Grid item>
                     <Header></Header>
                 </Grid>
                 <Grid item xs={12} lg={10}>

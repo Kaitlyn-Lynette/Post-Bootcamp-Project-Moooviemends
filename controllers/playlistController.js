@@ -10,7 +10,7 @@ module.exports = {
     },
     create: function (req, res) {
         db.Playlist.create({
-            name: req.body.name, 
+            title: req.body.title, 
             description: req.body.description, 
         })
             .then(function(dbPlaylist) {

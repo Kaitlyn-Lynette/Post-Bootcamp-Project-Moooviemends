@@ -8,22 +8,34 @@ import API from "../utils/API";
 export default function Create () {
   
     const [playlist, setPlaylist] = useState({title: "", description:""});
+    
 
     const handleCreatePlaylist = e => {
         e.preventDefault();
-        const { name, value } = e.target;
-        setPlaylist(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+        // const { name, value } = e.target;
+        // setPlaylist(({
+        //     [name]: value
+        // }));
+        // console.log('this is playlist', playlist)
         API.createPlaylist(playlist)
             .then((res)=> {
-                console.log("I'm listening")
+                // console.log("I'm listening")
+                console.log('this is res',res)
             })
             .catch((err) => {
                 console.log(err);
             });
         console.log('this is the playlist object', playlist)
+        };
+
+        const handleInputChange = e => {
+
+            const { name, value } = e.target;
+            setPlaylist(({
+                ...playlist,
+                [name]: value
+            }));
+            console.log('this is the value', value);
         };
   
     return (
@@ -46,7 +58,7 @@ export default function Create () {
             value={playlist.title}
             style={titleBoxStyle}
             name="title"
-            onChange={handleCreatePlaylist}
+            onChange = {handleInputChange}
             type="text"
             placeholder="Cartoon movies"
             />
@@ -57,7 +69,8 @@ export default function Create () {
             value={playlist.description}
             style={descBoxStyle}
             name="description"
-            onChange={handleCreatePlaylist}
+            onChange={handleInputChange}
+            // handleInputChange={handleInputChange}
             type="text"
             placeholder="Love me some good cartoon movies"
             id="outlined-multiline-static"

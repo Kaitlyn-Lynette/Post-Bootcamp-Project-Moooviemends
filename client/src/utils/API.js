@@ -26,6 +26,7 @@ export default {
     return axios.get('api/playlists');
   },
   createPlaylist: function (nameData) {
+    console.log(nameData);
     return axios.post('api/playlists',nameData);
   }
 
