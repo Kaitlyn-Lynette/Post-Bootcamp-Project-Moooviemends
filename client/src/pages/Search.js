@@ -7,40 +7,13 @@ import PlaylistButtons from '../components/PlaylistButtons';
 import API from "../utils/API";
 import Logo from '../components/Logo';
 import {Grid, Typography} from '@material-ui/core';
-import {makeStyles} from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-    // root: {
-    //     backgroundColor: '#FF5200',
-    //     width: '150vw',
-    //     height: '100vh',
-    //     flewgrow: '1',
-    //     [theme.breakpoints.down("xs")]: {
-    //         height: '200vh'
-    //     }, 
-    //     [theme.breakpoints.up("lg")]: {
-    //         height: '400vh'
-    //     },         
-    // },
-    list: {
-        width: '100%',
-        maxWidth: 360,
-        backgroundColor: theme.palette.background.paper,
-      }
-}));
-
-
 
 const Search = () => {
     const [search, setSearch] = useState('');
     const [movie, setMovie] = useState({});
     const [save, setSave] = useState({});
     const [playlistButton, setPlaylistButton] = React.useState(false)
-    // This will be for pulling the playlists from the database to show as buttons
-    
-    //Styling 
-    // const classes = useStyles ();
-    // const theme = useTheme ();
+
 
     const searchMovies = query => {
         console.log(query)
@@ -116,32 +89,31 @@ const Search = () => {
                 </SearchBar>
             </Grid>
             {movie.title ? (
-            <Grid item 
-            container
+            <Grid container
+            style={container}
             direction='row'
             >
-                <Grid item>
-                    <MovieTitle>
-                        {movie.title || "Search for a movie to begin"}
-                    </MovieTitle>
-                    <MovieCard
-                    src={movie.poster}
-                    director={movie.director}
-                    genre={movie.genre}
-                    released={movie.released}
-                    />
-                    </Grid>
-                
-                <Grid item>
-                    <Typography style={playlistStyle}>Add to Playlist</Typography>
-                    <PlaylistButtons
-                    onClick={handleSaveMovie}
-                    ></PlaylistButtons>    
-                </Grid>
+            <Grid item xs={6} lg={10}>
+                <MovieTitle>
+                    {movie.title || "Search for a movie to begin"}
+                </MovieTitle>
+                <MovieCard
+                src={movie.poster}
+                director={movie.director}
+                genre={movie.genre}
+                released={movie.released}
+                />
+            </Grid>
+            <Grid item xs={6} lg={10}>
+                <PlaylistButtons
+                onClick={handleSaveMovie}
+                ></PlaylistButtons>  
+            </Grid>
+
             </Grid>
             ) : (
                 <h3>No Results to Display</h3>
-            )}  
+            )}   
             </Grid>
         );
 };
@@ -161,21 +133,21 @@ const actionStyle = {
     top: '25%',
 }
 
-const playlistStyle = {
-    position: 'absolute',
-    width: '85%',
-    height: '5.4%',
-    left: '5%',
-    top: '50%',
-    fontFamily: 'Luckiest Guy',
-    fontSize: '24px',
-    fontWeight: 'normal',
-    fontStretch: 'normal',
-    fontStyle: 'normal',
-    lineHeight: 'normal',
-    letterSpacing: 'normal',
-    color: '#000000'
-}
+// const playlistStyle = {
+//     position: 'absolute',
+//     width: '85%',
+//     height: '5.4%',
+//     right: '7%',
+//     top: '47%',
+//     fontFamily: 'Luckiest Guy',
+//     fontSize: '24px',
+//     fontWeight: 'normal',
+//     fontStretch: 'normal',
+//     fontStyle: 'normal',
+//     lineHeight: 'normal',
+//     letterSpacing: 'normal',
+//     color: '#000000'
+// }
 
 const container = {
     backgroundColor: '#FF5200',

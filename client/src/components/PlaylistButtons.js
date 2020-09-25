@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
     root: {
       width: '100%',
       maxWidth: 360,
+      position: 'absolute',
+      left: '100%', 
+      top: '47%'
+
     },
     playlistButton: {
         background: '#BA0FF7',
@@ -22,9 +26,9 @@ const useStyles = makeStyles((theme) => ({
         height: '40px',
         borderRadius: '17px',
         backgroundColor: '#FFFF00',
-        // left: '30%',
-        right: '30%',
-        margin: '10px'
+        top: '55%',
+        right: '50%',
+        margin: '10px',
     }
   }));
 

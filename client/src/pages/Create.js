@@ -24,7 +24,6 @@ export default function Create () {
         };
 
         const handleInputChange = e => {
-
             const { name, value } = e.target;
             setPlaylist(({
                 ...playlist,

@@ -35,9 +35,9 @@ function MovieCard (props) {
 
 const cardStyle = {
     position: 'absolute',
-    left: '30%',
-    right: '30%',
-    top: '363.46px',
+    left: '7%',
+    // right: '30%',
+    top: '55%',
     margin: '0px auto',
     backgroundColor: "#FFFF00",
     fontFamily: "Roboto",

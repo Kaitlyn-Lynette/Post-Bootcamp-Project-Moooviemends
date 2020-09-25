@@ -7,12 +7,10 @@ const useStyles = makeStyles (() => ({
     title: {
         fontFamily: 'Luckiest Guy',
         position: 'absolute',
-        width: '300px',
-        height: '45px',
-        // left: '12px',
-        top: '318px',
-        left: '30%',
-        right: '30%',
+        width: '38.7%',
+        height: '6.6%',
+        left: '7%',
+        top: '50%',
         textAlign: 'center'
     }
 }));
