@@ -12,11 +12,6 @@ export default function Create () {
 
     const handleCreatePlaylist = e => {
         e.preventDefault();
-        // const { name, value } = e.target;
-        // setPlaylist(({
-        //     [name]: value
-        // }));
-        // console.log('this is playlist', playlist)
         API.createPlaylist(playlist)
             .then((res)=> {
                 // console.log("I'm listening")
@@ -70,7 +65,6 @@ export default function Create () {
             style={descBoxStyle}
             name="description"
             onChange={handleInputChange}
-            // handleInputChange={handleInputChange}
             type="text"
             placeholder="Love me some good cartoon movies"
             id="outlined-multiline-static"
