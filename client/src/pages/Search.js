@@ -14,7 +14,6 @@ const Search = () => {
     const [save, setSave] = useState({});
     const [playlistButton, setPlaylistButton] = React.useState(false)
 
-
     const searchMovies = query => {
         console.log(query)
         API.search(query)
@@ -73,7 +72,7 @@ const Search = () => {
             alignItems='center'
             direction='column'
             >
-            <Grid item>
+            <Grid item> 
                 <Logo></Logo>
             </Grid>
             <Grid item>
@@ -91,9 +90,11 @@ const Search = () => {
             {movie.title ? (
             <Grid container
             style={container}
+            justify='center'
+            alignItems='center'
             direction='row'
             >
-            <Grid item xs={6} lg={10}>
+            <Grid item xs={6}>
                 <MovieTitle>
                     {movie.title || "Search for a movie to begin"}
                 </MovieTitle>
@@ -104,7 +105,7 @@ const Search = () => {
                 released={movie.released}
                 />
             </Grid>
-            <Grid item xs={6} lg={10}>
+            <Grid item xs={6}>
                 <PlaylistButtons
                 onClick={handleSaveMovie}
                 ></PlaylistButtons>  
@@ -115,8 +116,8 @@ const Search = () => {
                 <Typography style={resultsStyle}>No Results to Display</Typography>
             )}   
             </Grid>
-        );
-};
+        )
+    }
 
 
 const searchStyle = {
