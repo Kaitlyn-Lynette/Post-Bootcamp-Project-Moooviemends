@@ -80,7 +80,7 @@ const Search = () => {
                 <Header></Header>
             </Grid>
             <Grid item>
-                <Typography style={actionStyle}>Search YO' MOOOVIE</Typography>
+                <Typography style={searchStyle}>Search YO' MOOOVIE</Typography>
                 <SearchBar
                 value={search.result}
                 handleInputChange={handleInputChange}
@@ -112,14 +112,14 @@ const Search = () => {
 
             </Grid>
             ) : (
-                <h3>No Results to Display</h3>
+                <Typography style={resultsStyle}>No Results to Display</Typography>
             )}   
             </Grid>
         );
 };
 
 
-const actionStyle = {
+const searchStyle = {
     fontFamily: 'Luckiest Guy',
     fontStyle: 'normal',
     fontWeight: 'normal',
@@ -132,6 +132,17 @@ const actionStyle = {
     left: '7%',
     top: '25%',
 }
+
+const resultsStyle = {
+    fontFamily: 'Luckiest Guy',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '24px',
+    lineHeight: '24px',
+    color: '#FFFFFF',
+}
+
+
 
 // const playlistStyle = {
 //     position: 'absolute',
