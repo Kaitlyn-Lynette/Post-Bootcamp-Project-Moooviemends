@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
     playlistButton: {
         background: '#BA0FF7',
-        borderRadius: '18px',
+        borderRadius: '12px',
         fontFamily: 'Luckiest Guy',
         fontStyle: 'bold',
         fontSize: '24px',
@@ -25,9 +25,9 @@ const useStyles = makeStyles((theme) => ({
         width: '150px',
         height: '40px',
         borderRadius: '17px',
-        backgroundColor: '#FFFF00',
+        backgroundColor: '#0000FF',
         top: '55%',
-        right: '50%',
+        right: '43%',
         margin: '10px',
     }
   }));
@@ -60,7 +60,7 @@ export default function PlaylistButtons (props) {
                 className={classes.playlistButton}
                 {...props}
                 >
-                    <ListItemText> {playlist.title}</ListItemText>
+                <ListItemText> {playlist.title} </ListItemText>
                 </ListItem>                
             );
             })}    

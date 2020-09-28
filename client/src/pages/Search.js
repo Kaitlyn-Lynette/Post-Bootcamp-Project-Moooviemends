@@ -43,7 +43,7 @@ const Search = () => {
         event.preventDefault();
         //Calls searchMovies
         searchMovies(search);
-        setPlaylistButton(!playlistButton)
+        
     };
 
     const handleSaveMovie = (event) => {
@@ -63,6 +63,7 @@ const Search = () => {
 
                 console.log(err);
             });
+            setPlaylistButton(!playlistButton)
     }
         return (
             <Grid 
@@ -92,9 +93,9 @@ const Search = () => {
             style={container}
             justify='center'
             alignItems='center'
-            direction='row'
+            direction='column'
             >
-            <Grid item xs={6}>
+            <Grid item>
                 <MovieTitle>
                     {movie.title || "Search for a movie to begin"}
                 </MovieTitle>
@@ -105,7 +106,7 @@ const Search = () => {
                 released={movie.released}
                 />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item>
                 <PlaylistButtons
                 onClick={handleSaveMovie}
                 ></PlaylistButtons>  

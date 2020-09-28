@@ -2,32 +2,22 @@ import React, {Component} from 'react'
 import { InputBase, Button, Grid} from '@material-ui/core';
 
 
-class SearchBar extends Component {
-    constructor (props) {
-        super(props)
-        this.state= {
-            isMovieSearched: false
-        };
-    }
-// const SearchBar = (props) => {
-    render () {
-    let { isMovieSearched } = this.state;
-        return (
-            <Grid>
-                <InputBase
-                onChange={handleInputChange}
-                value={this.value}
-                name="search"
-                type="text"
-                placeholder="Search for a Movie"
-                style={inputStyle}
-                id="search"
-                />
-                <br />
-                <Button style={btnStyle}  isMovieSearch={isMovieSearched} onClick={this.handleFormSubmit}> {...props} Search </Button>
-            </Grid>
-        );
-    }
+const SearchBar = (props) => {
+    return (
+        <Grid>
+            <InputBase
+            onChange={props.handleInputChange}
+            value={props.value}
+            name="search"
+            type="text"
+            placeholder="Search for a Movie"
+            style={inputStyle}
+            id="search"
+            />
+            <br />
+            <Button style={btnStyle} onClick={props.handleFormSubmit} {...props}> Search </Button>
+        </Grid>
+    )
 }
 
 const inputStyle = {
