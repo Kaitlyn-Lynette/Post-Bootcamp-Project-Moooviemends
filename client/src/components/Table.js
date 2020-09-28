@@ -1,33 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import Logo from '../components/Logo';
 import {Grid, Typography, Button } from '@material-ui/core';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 import API from '../utils/API';
-import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper,
-    },
-  }));
-
-function ListItemLink(props) {
-return <ListItem button component="a" {...props} />;
-}
 
 export default function Playlist () {
-    const [playlistCreated, setPlaylistCreated] = useState([])
-    const classes = useStyles ();
-    
+
+    const [playlistCreated, setPlaylistCreated] = use([])
+
       //Load all the playlist and store them with setPlaylist
       useEffect(() => {
         loadPlaylist()
@@ -37,7 +23,7 @@ export default function Playlist () {
     function loadPlaylist () {
         API.getPlaylist()
         .then(res => 
-            setPlaylistCreated(res.data)
+            setPlaylist(res.data)
         )
         .catch(err => console.log(err));
     };
@@ -58,21 +44,30 @@ export default function Playlist () {
             <Header></Header>
         </Grid>
         <Grid item>
-        <List component="nav" aria-label="all-playlist">
-            {playlistCreated.map(playlist=> {
-            return (
-                <ListItem 
-                button={playlist._id}>
-                <ListItemLink href="#simple-list">
-                <ListItemText>{playlist.title}</ListItemText>
-                <ListItemText>{playlist.description}</ListItemText>
-                </ListItemLink>
-                </ListItem>
-            );
-            })}
-        </List>
+           <Typography style={titleStyle}>Playlist Name</Typography> 
         </Grid>
-    
+        <Grid item xs={6} lg={10}>
+           <Typography style={descStyle}>Description of Playlist</Typography> 
+        </Grid>
+        <Grid item xs={6} lg={10}>
+        <TableContainer>
+            <Table style = {tableStyle}>
+                <TableHead>
+                    <TableRow>
+                        <TableCell><Typography style={tableFontStyle}>Movie Title</Typography></TableCell>
+                        <TableCell><Typography style={tableFontStyle}>Time</Typography></TableCell>
+                        <TableCell><Typography style={tableFontStyle}>Rating</Typography></TableCell>
+                    </TableRow>
+                </TableHead>
+            </Table>
+        </TableContainer>
+        </Grid>
+        <Grid item xs={11} lg={10}>
+        <Button style = {btnStyle}>Search</Button>
+        </Grid>
+        {/* <Grid item xs={11} lg={10}>
+            <h2>No movies added yet!</h2>
+        </Grid> */}
         </Grid>
     )
 }
