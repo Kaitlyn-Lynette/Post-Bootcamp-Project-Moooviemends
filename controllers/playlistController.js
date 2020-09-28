@@ -4,13 +4,12 @@ const db = require ('../models');
 module.exports = {
     findAll: (req,res) => {
         db.Playlist.find({})
-        .populate('movie')
-        .then((dbPlaylist)=> res.json(dbPlaylist))
-        .catch((err) => res.status(422).json(err));
+            .then((dbPlaylist)=> res.json(dbPlaylist))
+            .catch((err) => res.status(422).json(err));
     },
     create: function (req, res) {
         db.Playlist.create({
-            title: req.body.title, 
+            name: req.body.name, 
             description: req.body.description, 
         })
             .then(function(dbPlaylist) {
@@ -19,6 +18,11 @@ module.exports = {
             .catch(err => {
                 res.status(422).json(err)
             });
-
-    }
-}
+    },
+    findById: function (req, res) {
+        db.Playlist.findById(req.params.id)
+            .populate('movie')
+            .then(dbPlaylist => res.json(dbPlaylist))
+            .catch(err => res.status(422).json(err));
+        }
+};
