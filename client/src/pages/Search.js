@@ -46,7 +46,7 @@ const Search = () => {
         
     };
 
-    const handleSaveMovie = (event, playlistId) => {
+    const handleSaveMovie = (event) => {
         event.preventDefault();
         setSave({
             title: movie.title, 
@@ -66,6 +66,8 @@ const Search = () => {
             });
             // setPlaylistButton(!playlistButton)
     }
+
+
         return (
             <Grid 
             container
