@@ -4,6 +4,7 @@ const db = require ('../models');
 module.exports = {
     findAll: (req,res) => {
         db.Playlist.find({})
+            .populate('title')
             .then((dbPlaylist)=> res.json(dbPlaylist))
             .catch((err) => res.status(422).json(err));
     },
@@ -21,7 +22,7 @@ module.exports = {
     },
     findById: function (req, res) {
         db.Playlist.findById(req.params.id)
-            .populate('movie')
+            .populate('title')
             .then(dbPlaylist => res.json(dbPlaylist))
             .catch(err => res.status(422).json(err));
         }
