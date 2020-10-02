@@ -125,6 +125,7 @@ const searchStyle = {
     position: 'absolute',
     width: '71.9%',
     height: '3.5%',
+    left: '6%',
     top: '25%',
 }
 
