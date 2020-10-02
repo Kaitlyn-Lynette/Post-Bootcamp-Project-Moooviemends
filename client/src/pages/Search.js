@@ -149,24 +149,6 @@ const headerStyle = {
     top: '13%',
 }
 
-
-
-// const playlistStyle = {
-//     position: 'absolute',
-//     width: '85%',
-//     height: '5.4%',
-//     right: '7%',
-//     top: '47%',
-//     fontFamily: 'Luckiest Guy',
-//     fontSize: '24px',
-//     fontWeight: 'normal',
-//     fontStretch: 'normal',
-//     fontStyle: 'normal',
-//     lineHeight: 'normal',
-//     letterSpacing: 'normal',
-//     color: '#000000'
-// }
-
 const container = {
     backgroundColor: '#FF5200',
     width: '200vw',
@@ -176,5 +158,4 @@ const container = {
 
 
 
- 
 export default Search;
