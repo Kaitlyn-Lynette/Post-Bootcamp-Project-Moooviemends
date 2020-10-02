@@ -12,7 +12,6 @@ const Search = () => {
     const [search, setSearch] = useState('');
     const [movie, setMovie] = useState({});
     const [save, setSave] = useState({});
-    const [playlistButton, setPlaylistButton] = React.useState(false)
 
     const searchMovies = query => {
         console.log(query)
@@ -48,14 +47,7 @@ const Search = () => {
 
     const handleSaveMovie = (event) => {
         event.preventDefault();
-        setSave({
-            title: movie.title, 
-            director: movie.director,
-            genre: movie.genre,
-            released: movie.released,
-        })
-        console.log(save)
-        API.saveMovie({...save})
+        API.saveMovie({...movie})
             .then((res)=> {
             console.log(res) 
             console.log("I saved the movie!")
@@ -64,7 +56,6 @@ const Search = () => {
 
                 console.log(err);
             });
-            // setPlaylistButton(!playlistButton)
     }
 
 
