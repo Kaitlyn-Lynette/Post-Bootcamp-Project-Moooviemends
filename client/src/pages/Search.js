@@ -11,7 +11,6 @@ import {Grid, Typography} from '@material-ui/core';
 const Search = () => {
     const [search, setSearch] = useState('');
     const [movie, setMovie] = useState({});
-    const [save, setSave] = useState({});
 
     const searchMovies = query => {
         console.log(query)
@@ -67,13 +66,13 @@ const Search = () => {
             alignItems='center'
             direction='column'
             >
-            <Grid item> 
+            <Grid item item xs={6} lg={10}> 
                 <Logo></Logo>
             </Grid>
-            <Grid item>
-                <Header></Header>
+            <Grid item item xs={6} lg={10}>
+                <Header style={headerStyle}></Header>
             </Grid>
-            <Grid item>
+            <Grid item item xs={6} lg={10}>
                 <Typography style={searchStyle}>Search YO' MOOOVIE</Typography>
                 <SearchBar
                 value={search.result}
@@ -89,7 +88,7 @@ const Search = () => {
             alignItems='center'
             direction='column'
             >
-            <Grid item>
+            <Grid item item xs={6} lg={10}>
                 <MovieTitle>
                     {movie.title || "Search for a movie to begin"}
                 </MovieTitle>
@@ -100,7 +99,7 @@ const Search = () => {
                 released={movie.released}
                 />
             </Grid>
-            <Grid item>
+            <Grid item item xs={6} lg={10}>
                 <PlaylistButtons
                 onClick={handleSaveMovie}
                 ></PlaylistButtons>  
@@ -122,10 +121,10 @@ const searchStyle = {
     fontSize: '24px',
     lineHeight: '24px',
     color: '#FFFFFF',
+    textAlign: 'center',
     position: 'absolute',
     width: '71.9%',
     height: '3.5%',
-    left: '7%',
     top: '25%',
 }
 
@@ -136,6 +135,18 @@ const resultsStyle = {
     fontSize: '24px',
     lineHeight: '24px',
     color: '#FFFFFF',
+}
+
+const headerStyle = {
+    color: '#FFFFFF',
+    bottom: '250px',
+    position: 'absolute',
+    fontSize: '3em',
+    fontFamily: 'Luckiest Guy',
+    width: '71.9%',
+    height: '3.5%',
+    left: '7%',
+    top: '13%',
 }
 
 
@@ -158,10 +169,12 @@ const resultsStyle = {
 
 const container = {
     backgroundColor: '#FF5200',
-    width: '100vw',
-    height: '100vh',
+    width: '200vw',
+    height: '200vh',
     flewgrow: '1',
   };
+
+
 
  
 export default Search;
