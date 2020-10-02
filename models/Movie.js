@@ -6,10 +6,6 @@ const MovieSchema = new Schema ({
     director: {type: String, required: true},
     genre: {type: String, require: true},
     released: {type: Date, require: true},
-    playlist: {
-        type: Schema.Types.ObjectId,
-        ref: 'Playlist',
-    }  
 });
 
 const Movie = mongoose.model('Movie', MovieSchema);

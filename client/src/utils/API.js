@@ -21,7 +21,7 @@ export default {
     return axios.post('api/playlists', playlistData);
   },
   //Update playlist with a saved movie
-  updatePlaylist: function (id, newMovieData) {
-    return axios.put(`api/playlists/${id}`, newMovieData);
-  }
+  // updatePlaylist: function (id, newMovieData) {
+  //   return axios.put(`api/playlists/${id}`, newMovieData);
+  // }
 };

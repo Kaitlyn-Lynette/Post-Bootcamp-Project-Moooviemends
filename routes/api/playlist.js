@@ -6,8 +6,8 @@ router
     .get(playlistController.findAll)
     .post(playlistController.create)
    
-router 
-    .route('/:id')
-    .get(playlistController.findById)
+// router 
+//     .route('/:id')
+//     .get(playlistController.findById)
 
 module.exports = router;
