@@ -9,6 +9,5 @@ router
 router 
     .route('/:id')
     .get(playlistController.findById)
-    .post(playlistController.submit)
 
 module.exports = router;
