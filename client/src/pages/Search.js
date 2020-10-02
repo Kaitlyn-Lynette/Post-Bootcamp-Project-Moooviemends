@@ -52,19 +52,22 @@ const Search = () => {
             title: movie.title, 
             director: movie.director,
             genre: movie.genre,
-            released: movie.released
+            released: movie.released,
         })
-        API.saveMovie(save)
+        console.log(save)
+        API.saveMovie({...save})
             .then((res)=> {
             console.log(res) 
-            console.log("I'm listening")
+            console.log("I saved the movie!")
             })
             .catch((err) => {
 
                 console.log(err);
             });
-            setPlaylistButton(!playlistButton)
+            // setPlaylistButton(!playlistButton)
     }
+
+
         return (
             <Grid 
             container

@@ -7,27 +7,21 @@ export default {
   search: function(query) {
     return axios.get(BASEURL + query + APIKEY);
   },
-  //Get the movies saved to the database for the playlist
-  getMovies: function() {
-    return axios.get('/api/movies');
-  },
   //Add a new movie to the playlist
   saveMovie: function (movieData) {
     return axios.post('/api/movies',movieData);
   },
-  //Delete the movie from the playlist
-  deleteMovie: function(id) {
-    return axios.delete('/api/movies' + id);
-  },
-  
   //Playlist Routes
-  //Get the playlist from database
+  //Get the playlist from database. Using this on Playlist.js line 35. 
   getPlaylist: function () {
     return axios.get('api/playlists');
   },
-  createPlaylist: function (nameData) {
-    console.log(nameData);
-    return axios.post('api/playlists',nameData);
-  }
-
+  //Create playlist without movies. Using this on Create.js Line 15. 
+  createPlaylist: function (playlistData) {
+    return axios.post('api/playlists', playlistData);
+  },
+  //Update playlist with a saved movie
+  // updatePlaylist: function (id, newMovieData) {
+  //   return axios.put(`api/playlists/${id}`, newMovieData);
+  // }
 };

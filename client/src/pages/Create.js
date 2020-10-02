@@ -7,15 +7,13 @@ import API from "../utils/API";
 
 export default function Create () {
   
-    const [playlist, setPlaylist] = useState({title: "", description:""});
+    const [playlist, setPlaylist] = useState({name: "", description:"", movies: []});
     
 
     const handleCreatePlaylist = e => {
         e.preventDefault();
         API.createPlaylist(playlist)
             .then((res)=> {
-                // console.log("I'm listening")
-                console.log('this is res',res)
             })
             .catch((err) => {
                 console.log(err);
@@ -49,9 +47,9 @@ export default function Create () {
         <Grid item>
             <Typography style={titleStyle}>Playlist Title</Typography>
             <Input 
-            value={playlist.title}
+            value={playlist.name}
             style={titleBoxStyle}
-            name="title"
+            name="name"
             onChange = {handleInputChange}
             type="text"
             placeholder="Cartoon movies"

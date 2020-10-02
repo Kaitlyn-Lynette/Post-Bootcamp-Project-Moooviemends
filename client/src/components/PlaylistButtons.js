@@ -60,7 +60,7 @@ export default function PlaylistButtons (props) {
                 className={classes.playlistButton}
                 {...props}
                 >
-                <ListItemText> {playlist.title} </ListItemText>
+                <ListItemText> {playlist.name} </ListItemText>
                 </ListItem>                
             );
             })}    
