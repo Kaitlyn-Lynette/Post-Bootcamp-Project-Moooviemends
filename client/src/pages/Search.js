@@ -81,12 +81,13 @@ const Search = () => {
                 >
                 </SearchBar>
             </Grid>
+            <Grid item item xs={6} lg={10}>
             {movie.title ? (
             <Grid container
             style={container}
             justify='center'
             alignItems='center'
-            direction='column'
+            direction='row'
             >
             <Grid item item xs={6} lg={10}>
                 <MovieTitle>
@@ -109,6 +110,7 @@ const Search = () => {
             ) : (
                 <Typography style={resultsStyle}>No Results to Display</Typography>
             )}   
+            </Grid>
             </Grid>
         )
     }

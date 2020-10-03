@@ -2,18 +2,20 @@ import React, {useState} from 'react';
 import Header from '../components/Header';
 import Buttons from '../components/Buttons';
 import Logo from '../components/Logo';
+import AlertBar from '../components/AlertBar';
 import {Grid, Typography, Input} from '@material-ui/core';
 import API from "../utils/API";
 
 export default function Create () {
   
     const [playlist, setPlaylist] = useState({name: "", description:"", movies: []});
-    
+    const [alertOpen, setAlertOpen] = useState(false);
 
     const handleCreatePlaylist = e => {
         e.preventDefault();
         API.createPlaylist(playlist)
             .then((res)=> {
+                setAlertOpen(true);
             })
             .catch((err) => {
                 console.log(err);
@@ -29,6 +31,14 @@ export default function Create () {
             }));
             console.log('this is the value', value);
         };
+
+        const handleCloseAlert = (event, reason) => {
+            if (reason === 'clickaway') {
+              return;
+            }
+            // close all
+            setAlertOpen(false);
+          };
   
     return (
         <Grid 
@@ -77,6 +87,12 @@ export default function Create () {
             >
             <Typography style={btnFontStyle}>Create</Typography>
             </Buttons>
+            <AlertBar
+            message='Created~'
+            type='success'
+            openState={alertOpen}
+            onClose={handleCloseAlert}
+            />
         </Grid> 
         </Grid>
     )

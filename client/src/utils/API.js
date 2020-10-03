@@ -11,6 +11,9 @@ export default {
   saveMovie: function (movieData) {
     return axios.post('/api/movies',movieData);
   },
+  getMovies: function (movieData) {
+    return axios.get('api/movies',movieData);
+  },
   //Playlist Routes
   //Get the playlist from database. Using this on Playlist.js line 35. 
   getPlaylist: function () {
