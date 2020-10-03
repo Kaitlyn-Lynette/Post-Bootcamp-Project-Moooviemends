@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import MovieCard from '../components/MovieCard';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -56,17 +57,19 @@ export default function Movies() {
         </Grid>
         <Grid item>
         <List component="nav" aria-label="all-movies">
-            {moviesSaved.map(movies=> {
-            return (
-                <ListItem 
-                button={movies._id}>
-                <ListItemText>{movies.title}</ListItemText>
-                <ListItemText>{movies.director}</ListItemText>
-                <ListItemText>{movies.genre}</ListItemText>
-                <ListItemText>{movies.released}</ListItemText>
-                </ListItem>
-            );
-            })}
+        {
+          moviesSaved.map((movies) => (
+            <Grid item xs={11} sm={4} key={movies._id}>
+              <MovieCard
+                id={movies._id}
+                title={movies.title}
+                director={movies.director}
+                genre={movies.genre}
+                released={movies.released}
+              />
+            </Grid>
+          ))
+        }
         </List>
         </Grid>
         </Grid>
