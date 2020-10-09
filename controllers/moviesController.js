@@ -3,10 +3,13 @@
  module.exports = {
     //Post route for saving a new post 
    findAll: (req,res) => {
-       db.Movie.find({})
-        .populate('playlist')
-        .then((dbMovie)=> res.json(dbMovie))
-        .catch((err) => res.status(422).json(err));
+    db.Movie.find({})
+    .then(dbMovie => {
+      res.json(dbMovie);
+    })
+    .catch(err => {
+      res.json(err);
+    });
    },
     create: function (req, res) {
         db.Movie.create({
@@ -15,7 +18,10 @@
             genre: req.body.genre,
             released: req.body.released,
         })
-        .then((dbMovie)=> res.json(dbMovie))
-        .catch((err) => res.status(422).json(err));
+        .then(({_id}) => db.Playlist.findOneAndUpdate({}, { $push: { movies: _id } }, { new: true }))
+        .then(dbPlaylist => {res.json(dbPlaylist)})
+        .catch(err => {
+            res.json(err);
+          });
     }
  }

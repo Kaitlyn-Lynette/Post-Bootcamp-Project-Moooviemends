@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const PlaylistSchema = new Schema ({
     name: {type: String, required: true}, 
     description: {type: String, required: true},
-    movie: [
+    movies: [
         {
         type: Schema.Types.ObjectId, 
         ref: 'Movie',
