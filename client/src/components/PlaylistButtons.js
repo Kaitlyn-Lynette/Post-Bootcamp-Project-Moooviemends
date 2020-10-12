@@ -53,10 +53,12 @@ export default function PlaylistButtons (props) {
 
     return (
         <List component="nav" className={classes.root}>
+           
             {playlists.map(playlist => {
             return (
                 <ListItem 
-                button={playlist._id}
+                key={playlist._id}
+                // button={playlist._id}
                 className={classes.playlistButton}
                 {...props}
                 >
