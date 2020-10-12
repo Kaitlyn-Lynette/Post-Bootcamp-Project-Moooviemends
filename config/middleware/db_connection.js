@@ -6,10 +6,18 @@ mongoose.Promise = global.Promise;
 //27017 is the default mongoDB port
 var uri = process.env.MONGODB_URI || 'mongodb://localhost/moooviemends';
 
-mongoose.connect(uri).then(
+mongoose.connect(uri,
+  {
+    useNewUrlParser: 'true',
+    useUnifiedTopology: 'true',
+    useCreateIndex: 'true',
+    useFindAndModify: 'false',
+  }
+  ).then(
   () => {
     /** ready to use. The `mongoose.connect()` promise resolves to undefined. */
     console.log('Connected to Mongo');
+    
 
   },
   err => {
