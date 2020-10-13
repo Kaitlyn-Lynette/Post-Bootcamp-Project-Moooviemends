@@ -2,6 +2,9 @@
 
 This is a personal project I started after earning my coding certificate.  This is a React application in which users can query the OMDB API and display information about the movie searched for and then save that movie to a playlist. I created this app using Mongo, Node, Express, Material UI, and React. 
 
+# Deployed App
+https://moooviemends.herokuapp.com/
+
 # Table of Contents 
 
 ###### Learning Objectives
